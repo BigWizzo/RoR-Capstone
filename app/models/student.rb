@@ -4,8 +4,8 @@ class Student < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable, :authentication_keys => [:username]
 
-  validates :email, uniqueness: true
-  validates :username, uniqueness: true
+  validates :email, presence: true, uniqueness: true
+  validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 25 }
 
   has_many :subjects
 end
