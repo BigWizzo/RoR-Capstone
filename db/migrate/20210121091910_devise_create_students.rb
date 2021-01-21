@@ -4,6 +4,7 @@ class DeviseCreateStudents < ActiveRecord::Migration[5.2]
   def change
     create_table :students do |t|
       ## Database authenticatable
+      t.string :username,           null: false, default: ""
       t.string :email,              null: false, default: ""
       t.string :encrypted_password, null: false, default: ""
 
@@ -36,6 +37,7 @@ class DeviseCreateStudents < ActiveRecord::Migration[5.2]
       t.timestamps null: false
     end
 
+    add_index :students, :username,             unique: true
     add_index :students, :email,                unique: true
     add_index :students, :reset_password_token, unique: true
     # add_index :students, :confirmation_token,   unique: true
