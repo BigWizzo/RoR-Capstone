@@ -8,4 +8,5 @@ class Student < ApplicationRecord
   validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 25 }
 
   has_many :subjects
+  has_many :clockings
 end

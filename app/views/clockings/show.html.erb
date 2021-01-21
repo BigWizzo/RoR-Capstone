@@ -1,0 +1,19 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Topic:</strong>
+  <%= @clocking.topic %>
+</p>
+
+<p>
+  <strong>Details:</strong>
+  <%= @clocking.details %>
+</p>
+
+<p>
+  <strong>Duration:</strong>
+  <%= @clocking.duration %>
+</p>
+
+<%= link_to 'Edit', edit_clocking_path(@clocking) %> |
+<%= link_to 'Back', clockings_path %>

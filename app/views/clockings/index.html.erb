@@ -1,0 +1,31 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Clockings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Topic</th>
+      <th>Details</th>
+      <th>Duration</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @clockings.each do |clocking| %>
+      <tr>
+        <td><%= clocking.topic %></td>
+        <td><%= clocking.details %></td>
+        <td><%= clocking.duration %></td>
+        <td><%= link_to 'Show', clocking %></td>
+        <td><%= link_to 'Edit', edit_clocking_path(clocking) %></td>
+        <td><%= link_to 'Destroy', clocking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Clocking', new_clocking_path %>
