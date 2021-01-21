@@ -14,7 +14,7 @@ class SubjectsController < ApplicationController
 
   # GET /subjects/new
   def new
-    @subject = Subject.new
+    @subject = current_student.subjects.build
   end
 
   # GET /subjects/1/edit
@@ -24,7 +24,7 @@ class SubjectsController < ApplicationController
   # POST /subjects
   # POST /subjects.json
   def create
-    @subject = Subject.new(subject_params)
+    @subject = current_student.subjects.build(subject_params)
 
     respond_to do |format|
       if @subject.save
@@ -69,6 +69,6 @@ class SubjectsController < ApplicationController
 
     # Only allow a list of trusted parameters through.
     def subject_params
-      params.require(:subject).permit(:title, :description, :duration, :student_id)
+      params.require(:subject).permit(:title, :description)
     end
 end
