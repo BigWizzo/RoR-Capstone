@@ -4,7 +4,7 @@ class SubjectsController < ApplicationController
   # GET /subjects
   # GET /subjects.json
   def index
-    @subjects = Subject.all
+    @subjects = current_student.subjects
   end
 
   # GET /subjects/1
@@ -14,7 +14,7 @@ class SubjectsController < ApplicationController
 
   # GET /subjects/new
   def new
-    @subject = current_student.subjects.build
+    @subject = current_student.subjects.new
   end
 
   # GET /subjects/1/edit
@@ -29,10 +29,8 @@ class SubjectsController < ApplicationController
     respond_to do |format|
       if @subject.save
         format.html { redirect_to @subject, notice: 'Subject was successfully created.' }
-        format.json { render :show, status: :created, location: @subject }
       else
         format.html { render :new }
-        format.json { render json: @subject.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -43,10 +41,8 @@ class SubjectsController < ApplicationController
     respond_to do |format|
       if @subject.update(subject_params)
         format.html { redirect_to @subject, notice: 'Subject was successfully updated.' }
-        format.json { render :show, status: :ok, location: @subject }
       else
         format.html { render :edit }
-        format.json { render json: @subject.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -57,7 +53,6 @@ class SubjectsController < ApplicationController
     @subject.destroy
     respond_to do |format|
       format.html { redirect_to subjects_url, notice: 'Subject was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
