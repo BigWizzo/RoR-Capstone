@@ -31,7 +31,7 @@ class ClockingsController < ApplicationController
 
     respond_to do |format|
       if @clocking.save
-        format.html { redirect_to subject_clockings_path(@subject), notice: 'Clocking was successfully created.' }
+        format.html { redirect_to @subject, notice: 'Clocking was successfully created.' }
         format.json { render :show, status: :created, location: @clocking }
       else
         format.html { render :new }
