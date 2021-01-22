@@ -18,9 +18,10 @@
         <td><%= clocking.topic %></td>
         <td><%= clocking.details %></td>
         <td><%= clocking.duration %></td>
-        <td><%= link_to 'Show', clocking %></td>
-        <td><%= link_to 'Edit', edit_clocking_path(clocking) %></td>
-        <td><%= link_to 'Destroy', clocking, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= clocking.subject.title %></td>
+        <td><%= link_to 'Show Subject', [@subject] %></td>
+        <td><%= link_to 'Edit Clocking', edit_subject_clocking_path(@subject, clocking) %></td>
+        <td><%= link_to 'Destroy Clocking', [@subject, clocking], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +29,4 @@
 
 <br>
 
-<%= link_to 'New Clocking', new_clocking_path %>
+<%= link_to 'New Clocking', new_subject_clocking_path(@subject) %>

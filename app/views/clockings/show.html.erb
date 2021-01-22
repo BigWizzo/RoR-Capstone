@@ -15,5 +15,5 @@
   <%= @clocking.duration %>
 </p>
 
-<%= link_to 'Edit', edit_clocking_path(@clocking) %> |
-<%= link_to 'Back', clockings_path %>
+<%= link_to 'Edit', edit_subject_clocking_path(@subject, @clocking) %> |
+<%= link_to 'Back', subject_clockings_path(@subject) %>

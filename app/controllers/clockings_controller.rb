@@ -1,10 +1,12 @@
 class ClockingsController < ApplicationController
+  before_action :get_subject
   before_action :set_clocking, only: [:show, :edit, :update, :destroy]
 
   # GET /clockings
   # GET /clockings.json
   def index
-    @clockings = Clocking.all
+    # @clockings = Clocking.all
+    @clockings = @subject.clockings
   end
 
   # GET /clockings/1
@@ -14,7 +16,8 @@ class ClockingsController < ApplicationController
 
   # GET /clockings/new
   def new
-    @clocking = Clocking.new
+    # @clocking = Clocking.new
+    @clocking = @subject.clockings.build
   end
 
   # GET /clockings/1/edit
@@ -24,11 +27,11 @@ class ClockingsController < ApplicationController
   # POST /clockings
   # POST /clockings.json
   def create
-    @clocking = Clocking.new(clocking_params)
+    @clocking = @subject.clockings.build(clocking_params)
 
     respond_to do |format|
       if @clocking.save
-        format.html { redirect_to @clocking, notice: 'Clocking was successfully created.' }
+        format.html { redirect_to subject_clockings_path(@subject), notice: 'Clocking was successfully created.' }
         format.json { render :show, status: :created, location: @clocking }
       else
         format.html { render :new }
@@ -42,7 +45,7 @@ class ClockingsController < ApplicationController
   def update
     respond_to do |format|
       if @clocking.update(clocking_params)
-        format.html { redirect_to @clocking, notice: 'Clocking was successfully updated.' }
+        format.html { redirect_to subject_clocking_path(@subject), notice: 'Clocking was successfully updated.' }
         format.json { render :show, status: :ok, location: @clocking }
       else
         format.html { render :edit }
@@ -56,15 +59,20 @@ class ClockingsController < ApplicationController
   def destroy
     @clocking.destroy
     respond_to do |format|
-      format.html { redirect_to clockings_url, notice: 'Clocking was successfully destroyed.' }
+      format.html { redirect_to subject_clockings_path(@subject), notice: 'Clocking was successfully destroyed.' }
       format.json { head :no_content }
     end
   end
 
   private
+
+    def get_subject
+      @subject = Subject.find(params[:subject_id])
+    end
+
     # Use callbacks to share common setup or constraints between actions.
     def set_clocking
-      @clocking = Clocking.find(params[:id])
+      @clocking = @subject.clockings.find(params[:id])
     end
 
     # Only allow a list of trusted parameters through.

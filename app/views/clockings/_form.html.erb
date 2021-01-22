@@ -1,4 +1,4 @@
-<%= form_with(model: clocking, local: true) do |form| %>
+<%= form_with(model: [@subject, clocking], local: true) do |form| %>
   <% if clocking.errors.any? %>
     <div id="error_explanation">
       <h2><%= pluralize(clocking.errors.count, "error") %> prohibited this clocking from being saved:</h2>

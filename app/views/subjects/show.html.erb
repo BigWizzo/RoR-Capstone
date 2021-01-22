@@ -10,5 +10,15 @@
   <%= @subject.description %>
 </p>
 
+<h2>Clockings</h2>
+<% for clocking in @subject.clockings %>
+    <ul>
+      <li><%= clocking.topic %></li>
+      <li><%= clocking.details %></li>
+      <li><%= clocking.duration %></li>
+  </ul>
+<% end %>
+
 <%= link_to 'Edit', edit_subject_path(@subject) %> |
+<%= link_to 'Add Clocking', subject_clockings_path(@subject) %> |
 <%= link_to 'Back', subjects_path %>
