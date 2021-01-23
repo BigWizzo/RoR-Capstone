@@ -1,16 +1,6 @@
 <%= link_to 'New Clocking', new_subject_clocking_path(@subject) %>
 
-<p>
-  <strong>Title:</strong>
-  <%= @subject.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @subject.description %>
-</p>
-
-<h2>Clockings</h2>
+<h2><%=@subject.title%></h2>
   <table>
   <thead>
     <tr>
@@ -27,7 +17,7 @@
         <td><%= clocking.topic %></td>
         <td><%= clocking.details %></td>
         <td><%= clocking.duration %></td>
-        <td><%= clocking.subject.title %></td>
+        <%# <td><%= clocking.subject.title </td> %>
         <td><%= link_to 'Edit Clocking', edit_subject_clocking_path(@subject, clocking) %></td>
         <td><%= link_to 'Destroy Clocking', [@subject, clocking], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
