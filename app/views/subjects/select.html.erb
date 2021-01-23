@@ -1,4 +1,4 @@
-<h1>Select Subject</h1>
+<h1>Select Subject for ypur Clocking</h1>
 
 <p>Please select the Subject your Clocking belongs to</p>
 <p>You may choose External if the clocking is not for a subject</p>
@@ -19,7 +19,6 @@
     <% @subjects.each do |subject| %>
       <tr>
         <td><%= subject.title %></td>
-        <td><%= subject.description %></td>
         <td><%= link_to 'Select', subject %></td>
       </tr>
     <% end %>
@@ -27,5 +26,3 @@
 </table>
 
 <br>
-
-<%= link_to 'New Subject', new_subject_path %>
