@@ -12,6 +12,8 @@ class Student < ApplicationRecord
   after_save :external
   
   def external
-    Subject.create(student_id: self.id, title: "External", description: "For all your non Subject Clockings")
+    if Subject.where(student_id: self.id, title: "External").empty?
+      Subject.create(student_id: self.id, title: "External", description: "For all your non Subject Clockings")
+    end
   end
 end

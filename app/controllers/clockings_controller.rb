@@ -44,11 +44,6 @@ class ClockingsController < ApplicationController
     end
   end
 
-  # def update
-    # Subject.create(friend_id: params[:user_id])
-    # redirect_to root_path
-  # end
-
   private
 
     def get_subject
