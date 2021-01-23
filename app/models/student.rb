@@ -8,4 +8,10 @@ class Student < ApplicationRecord
   validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 25 }
 
   has_many :subjects
+
+  after_save :external
+  
+  def external
+    Subject.create(student_id: self.id, title: "External", description: "For all your non Subject Clockings")
+  end
 end
