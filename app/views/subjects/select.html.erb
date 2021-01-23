@@ -1,4 +1,10 @@
-<h1>Subjects</h1>
+<h1>Select Subject</h1>
+
+<p>Please select the Subject your Clocking belongs to</p>
+<p>You may choose External if the clocking is not for a subject</p>
+
+<p>Please Create the Subject your Clocking belongs to.</p>
+<p>You may choose External if the clocking is not for a subject</p>
 
 <table>
   <thead>
@@ -14,9 +20,7 @@
       <tr>
         <td><%= subject.title %></td>
         <td><%= subject.description %></td>
-        <td><%= link_to 'Show', subject %></td>
-        <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Select', subject %></td>
       </tr>
     <% end %>
   </tbody>
