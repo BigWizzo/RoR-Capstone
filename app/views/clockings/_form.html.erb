@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= form.label :duration %>
-    <%= form.number_field :duration %>
+    <%= form.number_field :duration, min: 0, max: 24 %>
   </div>
 
   <div class="actions">
