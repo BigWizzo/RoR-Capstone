@@ -1,27 +1,22 @@
-<p id="notice"><%= notice %></p>
+<h2>Clockings</h2>
+<% @subjects.each do |subject| %>
+  <% subject.clockings.each do |clocking| %>
+    <%if subject.title != "External"%>
+      <p><%= clocking.topic %></p>
+      <p><%= clocking.details %></p>
+      <p><%= clocking.duration %></p>
+    <%end%>
+  <% end %>
+<%end%>
 
-<h1>Clockings</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Topic</th>
-      <th>Details</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @subjects.each do |subject| %>
-      <% subject.clockings.each do |clock| %>
-        <tr>
-          <td><%= clock.topic %></td>
-          <td><%= clock.details %></td>
-          <td><%= clock.duration %></td>
-        </tr>
-      <% end %>
-    <% end %>
-  </tbody>
-</table>
-
+<h2>External</h2>
+<% @subjects.each do |subject| %>
+  <% subject.clockings.each do |clocking| %>
+    <%if subject.title == "External"%>
+      <p><%= clocking.topic %></p>
+      <p><%= clocking.details %></p>
+      <p><%= clocking.duration %></p>
+    <%end%>
+  <% end %>
+<% end %>
 <%= link_to 'New Clocking', select_path %> |
