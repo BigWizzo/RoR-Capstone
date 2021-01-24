@@ -15,6 +15,8 @@ class Student < ApplicationRecord
   def external
     if Subject.where(student_id: self.id, title: "External").empty?
       Subject.create(student_id: self.id, title: "External", description: "For all your non Subject Clockings")
+      # subject.icon.attach(io: File.open("#{Rails.root}/app/assets/images/default.jpg"), filename: 'default.jpg')
+      # subject.save!
     end
   end
 end

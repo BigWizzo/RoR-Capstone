@@ -90,10 +90,16 @@
           <% @subjects.each do |subject| %>
             <% subject.clockings.each do |clocking| %>
               <%if subject.title != "External"%>
-                <p><%= clocking.topic %></p>
-                <p><%= clocking.details %></p>
-                <p><%= clocking.duration %></p>
-                <p><%= image_tag(subject.icon) if subject.icon.attached? %></p>
+                <div class="icon">
+                  <p><%= image_tag(subject.icon) if subject.icon.attached? %></p>
+                </div>
+                <div class="top-det">
+                  <p><%= clocking.topic %></p>
+                  <p><%= clocking.details %></p>
+                </div>
+                <div class="dtn">
+                  <p><%= clocking.duration %></p>
+                </div>
               <%end%>
             <% end %>
           <%end%>
