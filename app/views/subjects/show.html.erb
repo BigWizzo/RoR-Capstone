@@ -17,8 +17,7 @@
         <td><%= clocking.topic %></td>
         <td><%= clocking.details %></td>
         <td><%= clocking.duration %></td>
-        <td><img src="<%=(url_for(clocking.icon))%>"></td>
-        <%# <td><%= clocking.subject.title </td> %>
+        <td><%= image_tag(@subject.icon) if @subject.icon.attached? %></td>
         <td><%= link_to 'Edit Clocking', edit_subject_clocking_path(@subject, clocking) %></td>
         <td><%= link_to 'Destroy Clocking', [@subject, clocking], method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>

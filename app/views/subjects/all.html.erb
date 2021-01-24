@@ -5,6 +5,7 @@
       <p><%= clocking.topic %></p>
       <p><%= clocking.details %></p>
       <p><%= clocking.duration %></p>
+      <p><%= image_tag(subject.icon) if subject.icon.attached? %></p>
     <%end%>
   <% end %>
 <%end%>
@@ -16,6 +17,7 @@
       <p><%= clocking.topic %></p>
       <p><%= clocking.details %></p>
       <p><%= clocking.duration %></p>
+      <p><%= image_tag(subject.icon) if subject.icon.attached? %></p>
     <%end%>
   <% end %>
 <% end %>
