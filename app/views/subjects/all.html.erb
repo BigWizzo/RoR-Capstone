@@ -2,6 +2,7 @@
 <% @subjects.each do |subject| %>
   <% subject.clockings.each do |clocking| %>
     <%if subject.title != "External"%>
+      <p><%= image_tag(subject.icon) if subject.icon.attached? %></p>
       <p><%= clocking.topic %></p>
       <p><%= clocking.details %></p>
       <p><%= clocking.duration %></p>
@@ -13,6 +14,7 @@
 <% @subjects.each do |subject| %>
   <% subject.clockings.each do |clocking| %>
     <%if subject.title == "External"%>
+      <%# <p><%= image_tag(subject.icon) if subject.icon.attached? </p> %>
       <p><%= clocking.topic %></p>
       <p><%= clocking.details %></p>
       <p><%= clocking.duration %></p>
