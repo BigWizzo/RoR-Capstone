@@ -6,16 +6,16 @@
         <a class="nav-link" href="#">LOGO</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link 1</a>
+        <%= link_to 'All Subjects', subjects_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <a class="nav-link" href="#">Link 2</a>
-      </li>
-      <li class="nav-item">
-        <%= render 'devise/menu/login_items' %>
+        <%= link_to 'External Clockings', external_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <%= link_to 'New Clocking', select_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
+        <%= render 'devise/menu/login_items' %>
       </li>
     </ul><br>
   </nav>

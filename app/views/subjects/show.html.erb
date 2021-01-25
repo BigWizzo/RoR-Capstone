@@ -28,3 +28,76 @@
 <%= link_to 'Edit', edit_subject_path(@subject) %> |
 <%= link_to 'New Clocking', new_subject_clocking_path(@subject) %> |
 <%= link_to 'Back', subjects_path %>
+
+<div class="d-none d-md-block">
+  <h1 class="p-3 text-center">Clockings</h1>
+</div>
+
+<div class="container-fluid">
+  <div class="row content">
+
+  <%= render 'subjects/nav' %>
+    
+    <div class="col-md-9">
+      <div class="dash d-none d-md-block">
+        <div class="row">
+          <div class="col-md-4 text-center">
+            <div class="chunk">
+              <h4 class="dash-h">Users</h4>
+              <p class="dash-p">1 Million</p> 
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="chunk">
+              <h4 class="dash-h">Pages</h4>
+              <p class="dash-p">100 Million</p> 
+            </div>
+          </div>
+          <div class="col-md-4 text-center">
+            <div class="chunk">
+              <h4 class="dash-h">Sessions</h4>
+              <p class="dash-p">10 Million</p> 
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="chunk container pt-3">
+        <div class="row">
+          <div class="clock-type col-10">
+            <h4>subject based clockings</h4>
+          </div>
+          <div class="clock-total col-2 text-center">
+            45 Hours
+          </div>
+        </div>
+      </div>
+      <% @subjects.each do |subject| %>
+        <% subject.clockings.each do |clocking| %>
+          <%if subject.title != "External"%>
+            <div class="card mb-3">
+              <div class="row no-gutters">
+                <div class="col-3 card-wrap">
+                  <%= image_tag(subject.icon.variant(extent: "10:7"), class: "card-img") %>
+                </div>
+                <div class="col-7">
+                  <div class="card-body py-1">
+                    <h5 class="card-title m-0"><%= clocking.topic %></h5>
+                    <p class="card-text mb-2">
+                      <small class="text-muted">SUBJECT: </small>
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </p>
+                    <p class="card-detail mb-2"><%= clocking.details %></p>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <h5 class="row justify-content-center m-3"><%= clocking.duration %> Hours</h5>
+                </div>
+              </div>
+            </div>
+          <%end%>
+        <% end %>
+      <%end%>
+    </div>
+  </div>
+</div>
+
