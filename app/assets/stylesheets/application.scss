@@ -13,6 +13,88 @@
 
 @import "bootstrap";
 
+/* colors here */
+.gray-clr {
+  color: #d3d3d3;
+}
+
+.gray-bg {
+  background: #d3d3d3;
+}
+
+.lt-gray-clr {
+  color: #f3f3f3;
+}
+
+.lt-gray-bg {
+  background: #f3f3f3;
+}
+
+.red-clr {
+  color: #ec5242;
+}
+
+.red-bg {
+  background: #ec5242;
+}
+
+.black-clr {
+  color: #272131;
+}
+
+.black-bg {
+  background: #272131;
+}
+
+.lt-blue-clr {
+  color: #0f4275;
+}
+
+.lt-black-bg {
+  background: #1234565c;
+}
+
+/* fonts here */
+.font-11 {
+  font-size: 11px;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-13 {
+  font-size: 13px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-15 {
+  font-size: 15px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-35 {
+  font-size: 32px;
+}
+
+.w-90 {
+  width: 90%;
+}
+
 /* Set height of the grid so .sidenav can be 100% (adjust as needed) */
 .row.content {
   height: 550px;
@@ -24,9 +106,55 @@
   height: 100%;
 }
 
-/* On small screens, set height to 'auto' for the grid */
+/* On 992px and below screens*/
+@media screen and (max-width: 992px) {
+  .dash-h {
+    font-size: 20px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .dash-p {
+    font-size: 14px;
+  }
+
+  .card-text {
+    font-size: 11px;
+  }
+
+  .card-detail {
+    font-size: 14px;
+  }
+}
+
+/* On 767px screens and below, set height to 'auto' for the grid */
 @media screen and (max-width: 767px) {
   .row.content {
     height: auto;
+  }
+}
+
+/* On 592px screens and below, set height to 'auto' for the grid */
+@media screen and (max-width: 592px) {
+  .card-title {
+    font-size: 16px;
+  }
+
+  .card-text {
+    font-size: 11px;
+  }
+
+  .card-detail {
+    font-size: 13px;
+  }
+
+  .card-wrap {
+    max-height: 200px;
+  }
+
+  .card-img {
+    height: 100%;
   }
 }
