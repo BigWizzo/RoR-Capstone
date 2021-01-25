@@ -1,28 +1,42 @@
-<h1>Subjects</h1>
+<div class="d-none d-md-block">
+  <h1 class="p-3 text-center">All Subjects</h1>
+</div>
 
-<table>
-  <thead>
-    <tr>
-      <th>Title</th>
-      <th>Description</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container-fluid">
+  <div class="row content">
 
-  <tbody>
-    <% @subjects.each do |subject| %>
-      <tr>
-        <td><%= subject.title %></td>
-        <td><%= subject.description %></td>
-        <td><%= image_tag(subject.icon) if subject.icon.attached? %></td>
-        <td><%= link_to 'Show', subject %></td>
-        <td><%= link_to 'Edit', edit_subject_path(subject) %></td>
-        <td><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <%= render 'subjects/nav' %>
+    
+    <div class="col-md-9">
+      <% @subjects.each do |subject| %>          
+          <div class="card mb-3">
+            <div class="row no-gutters">
+              <div class="col-3 card-wrap">
+                <%if subject.title != "External"%>
+                  <%= image_tag(subject.icon.variant(extent: "10:7"), class: "card-img") %>
+                <%elsif subject.title == "External"%>
+                  <%= image_tag("default.jpg", class: "card-img") %>
+                <%end%>
+              </div>
+              <div class="col-7">
+                  <div class="card-body py-1">
+                    <h5 class="card-title m-0"><%= subject.title %></h5>
+                    <p class="card-text mb-2">
+                      <small class="text-muted">SUBJECT: </small>
+                      <small class="text-muted">Last updated 3 mins ago</small>
+                    </p>
+                    <p class="card-detail mb-2"><%= subject.description %></p>
+                  </div>
+              </div>
+              <div class="col-2">
+                <p><%= link_to 'Show', subject %></p>
+                <p><%= link_to 'Edit', edit_subject_path(subject) %></p>
+                <p><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+              </div>
+            </div>
+          </div>
+      <%end%>
+    </div>
+  </div>
+</div>
 
-<br>
-
-<%= link_to 'New Subject', new_subject_path %>
