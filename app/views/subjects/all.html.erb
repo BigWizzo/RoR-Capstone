@@ -119,7 +119,8 @@
                 <p><%= clocking.topic %></p>
                 <p><%= clocking.details %></p>
                 <p><%= clocking.duration %></p>
-                <p><%= image_tag subject.icon.variant(resize: '500x500') %></p>
+                <%# <p><%= image_tag subject.icon.variant(resize: '500x500') </p> %>
+                <p><%= image_tag "default.jpg" %></p>
               <%end%>
             <% end %>
           <%end%>
