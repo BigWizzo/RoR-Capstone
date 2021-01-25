@@ -22,16 +22,20 @@
                   <div class="card-body py-1">
                     <h5 class="card-title m-0"><%= subject.title %></h5>
                     <p class="card-text mb-2">
-                      <small class="text-muted">SUBJECT: </small>
-                      <small class="text-muted">Last updated 3 mins ago</small>
+                      <small class="text-muted"><%=subject.title%>: </small>
+                      <small class="text-muted">
+                        Created: <%= subject.created_at.strftime("#{subject.created_at.day.ordinalize} %B %Y") %>
+                      </small>
                     </p>
                     <p class="card-detail mb-2"><%= subject.description %></p>
                   </div>
               </div>
               <div class="col-2">
-                <p><%= link_to 'Show', subject %></p>
-                <p><%= link_to 'Edit', edit_subject_path(subject) %></p>
-                <p><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                <div class="<%= 'remove-external' if subject.title == 'External' %>">
+                  <p><%= link_to 'Show', subject %></p>
+                  <p><%= link_to 'Edit', edit_subject_path(subject) %></p>
+                  <p><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                </div>
               </div>
             </div>
           </div>

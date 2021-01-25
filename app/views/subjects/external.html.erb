@@ -33,7 +33,7 @@
             <p>subject based clockings</p>
           </div>
           <div class="clock-total col-2 mt-3 text-center">
-            45 Hours
+            <%= clocking.duration %> Hours
           </div>
         </div>
       </div>
@@ -49,8 +49,10 @@
                   <div class="card-body py-1">
                     <h5 class="card-title m-0"><%= clocking.topic %></h5>
                     <p class="card-text mb-2">
-                      <small class="text-muted">SUBJECT: </small>
-                      <small class="text-muted">Last updated 3 mins ago</small>
+                      <small class="text-muted"><%=subject.title%>: </small>
+                      <small class="text-muted">
+                        Created: <%= clocking.created_at.strftime("#{clocking.created_at.day.ordinalize} %B %Y") %>
+                      </small>
                     </p>
                     <p class="card-detail mb-2"><%= clocking.details %></p>
                   </div>
