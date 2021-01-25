@@ -8,4 +8,5 @@ Rails.application.routes.draw do
 
   get 'all', to: 'subjects#all'
   get 'select', to: 'subjects#select'
+  get 'external', to: 'subjects#external'
 end

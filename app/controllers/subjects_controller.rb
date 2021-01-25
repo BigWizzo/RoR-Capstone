@@ -14,6 +14,10 @@ class SubjectsController < ApplicationController
     @subjects = current_student.subjects
   end
 
+  def external
+    @subjects = current_student.subjects
+  end
+
   def show
   end
 

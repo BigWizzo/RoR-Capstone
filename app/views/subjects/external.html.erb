@@ -1,7 +1,3 @@
-<div class="">
-  <h1>Clockings</h1>
-</div>
-
 <div class="container-fluid">
   <div class="row content">
 
@@ -43,11 +39,11 @@
       </div>
       <% @subjects.each do |subject| %>
         <% subject.clockings.each do |clocking| %>
-          <%if subject.title != "External"%>
+          <%if subject.title == "External"%>
             <div class="card mb-3">
               <div class="row no-gutters">
                 <div class="col-3 card-wrap">
-                  <%= image_tag(subject.icon.variant(extent: "10:7"), class: "card-img") %>
+                  <%= image_tag("default.jpg", class: "card-img") %>
                 </div>
                 <div class="col-7">
                   <div class="card-body py-1">
