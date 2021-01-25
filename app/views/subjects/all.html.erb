@@ -1,24 +1,133 @@
-<h2>Clockings</h2>
-<% @subjects.each do |subject| %>
-  <% subject.clockings.each do |clocking| %>
-    <%if subject.title != "External"%>
-      <p><%= image_tag(subject.icon) if subject.icon.attached? %></p>
-      <p><%= clocking.topic %></p>
-      <p><%= clocking.details %></p>
-      <p><%= clocking.duration %></p>
-    <%end%>
-  <% end %>
-<%end%>
+<div class="container-fluid">
+  <div class="row content">  
 
-<h2>External</h2>
-<% @subjects.each do |subject| %>
-  <% subject.clockings.each do |clocking| %>
-    <%if subject.title == "External"%>
-      <%# <p><%= image_tag(subject.icon) if subject.icon.attached? </p> %>
-      <p><%= clocking.topic %></p>
-      <p><%= clocking.details %></p>
-      <p><%= clocking.duration %></p>
-    <%end%>
-  <% end %>
-<% end %>
-<%= link_to 'New Clocking', select_path %> |
+    <div class="col-md-3 sidenav hidden-xs">
+      <%# <nav class="navbar bg-light"> %>
+        <%# <!-- Links --> %>
+        <%# <ul class="navbar-nav"> %>
+          <%# <li class="nav-item"> %>
+            <%# <a class="nav-link" href="#">LOGO</a> %>
+          <%# </li> %>
+          <%# <li class="nav-item"> %>
+            <%# <a class="nav-link" href="#">Link 1</a> %>
+          <%# </li> %>
+          <%# <li class="nav-item"> %>
+            <%# <a class="nav-link" href="#">Link 2</a> %>
+          <%# </li> %>
+          <%# <li class="nav-item"> %>
+            <%# <a class="nav-link" href="#">Link 3</a> %>
+          <%# </li> %>
+        <%# </ul><br> %>
+      <%# </nav> %>
+      <nav class="navbar navbar-toggleable-md navbar-light bg-light">
+        <a class="navbar-brand" href="#">Navbar</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+      
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto">
+            <li class="nav-item active">
+              <a class="nav-link" href="#">Home <span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" href="#">Link</a>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Dropdown
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                <a class="dropdown-item" href="#">Action</a>
+                <a class="dropdown-item" href="#">Another action</a>
+                <div class="dropdown-divider"></div>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    </div>
+    <br>
+    
+    <div class="col-md-9">
+      <div class="row">
+        <div class="col-md-3">
+          <div class="well">
+            <h4>Users</h4>
+            <p>1 Million</p> 
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="well">
+            <h4>Pages</h4>
+            <p>100 Million</p> 
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="well">
+            <h4>Sessions</h4>
+            <p>10 Million</p> 
+          </div>
+        </div>
+        <div class="col-md-3">
+          <div class="well">
+            <h4>Bounce</h4>
+            <p>30%</p> 
+          </div>
+        </div>
+      </div>
+      <div class="well container">
+        <h4>All Clockings</h4>
+        <p>All your subject based clockings</p>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="well">
+          <% @subjects.each do |subject| %>
+            <% subject.clockings.each do |clocking| %>
+              <%if subject.title != "External"%>
+                <div class="icon">
+                  <p><%= image_tag(subject.icon) if subject.icon.attached? %></p>
+                </div>
+                <div class="top-det">
+                  <p><%= clocking.topic %></p>
+                  <p><%= clocking.details %></p>
+                </div>
+                <div class="dtn">
+                  <p><%= clocking.duration %></p>
+                </div>
+              <%end%>
+            <% end %>
+          <%end%>
+          </div>
+        </div>
+      </div>
+      <div class="well container">
+        <h4>Subject Clockings</h4>
+        <p>All your non subject based clockings</p>
+      </div>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="well">
+          <% @subjects.each do |subject| %>
+            <% subject.clockings.each do |clocking| %>
+              <%if subject.title != "External"%>
+                <p><%= clocking.topic %></p>
+                <p><%= clocking.details %></p>
+                <p><%= clocking.duration %></p>
+                <p><%= image_tag(subject.icon) if subject.icon.attached? %></p>
+              <%end%>
+            <% end %>
+          <%end%>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <%= link_to 'New Clocking', select_path %> |
+</div>
