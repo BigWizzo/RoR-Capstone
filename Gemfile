@@ -39,6 +39,7 @@ gem 'devise'
 gem 'hirb'
 gem 'bootstrap'
 gem 'jquery-rails'
+gem 'image_processing'
 
 group :development, :test do
   gem 'rspec-rails'

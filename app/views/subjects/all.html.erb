@@ -91,7 +91,7 @@
             <% subject.clockings.each do |clocking| %>
               <%if subject.title != "External"%>
                 <div class="icon">
-                  <p><%= image_tag(subject.icon) if subject.icon.attached? %></p>
+                  <p><%= image_tag subject.icon.variant(resize: '500x500') %></p>
                 </div>
                 <div class="top-det">
                   <p><%= clocking.topic %></p>
@@ -107,7 +107,7 @@
         </div>
       </div>
       <div class="well container">
-        <h4>Subject Clockings</h4>
+        <h4>External Clockings</h4>
         <p>All your non subject based clockings</p>
       </div>
       <div class="row">
@@ -115,11 +115,11 @@
           <div class="well">
           <% @subjects.each do |subject| %>
             <% subject.clockings.each do |clocking| %>
-              <%if subject.title != "External"%>
+              <%if subject.title == "External"%>
                 <p><%= clocking.topic %></p>
                 <p><%= clocking.details %></p>
                 <p><%= clocking.duration %></p>
-                <p><%= image_tag(subject.icon) if subject.icon.attached? %></p>
+                <p><%= image_tag subject.icon.variant(resize: '500x500') %></p>
               <%end%>
             <% end %>
           <%end%>
