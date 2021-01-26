@@ -1,5 +1,8 @@
 {
   "name": "RoR-Capstone",
   "private": true,
-  "dependencies": {}
+  "dependencies": {
+    "imagemagick": "^0.1.3",
+    "vips": "^1.0.0"
+  }
 }

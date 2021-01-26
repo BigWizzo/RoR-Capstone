@@ -1,0 +1,34 @@
+<div class="d-form m-auto">
+<%= form_with(model: subject, local: true) do |form| %>
+  <% if subject.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(subject.errors.count, "error") %> prohibited this subject from being saved:</h2>
+
+      <ul>
+      <% subject.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group field">
+    <%= form.label :title %>
+    <%= form.text_field :title, class: "form-control", autofocus: true %>
+  </div>
+
+  <div class="form-group field">
+    <%= form.label :description %>
+    <%= form.text_field :description, class: "form-control" %>
+  </div>
+
+  <div class="form-group field">
+    <%= form.label :icon %>
+    <%= form.file_field :icon, class: "form-control" %>
+  </div>
+
+  <div class="form-group actions">
+    <%= form.submit "Create Subject", class: "btn btn-primary btn-lg btn-block" %>
+  </div>
+<% end %>
+</div>
