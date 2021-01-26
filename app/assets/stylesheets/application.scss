@@ -109,6 +109,10 @@
   height: 100%;
 }
 
+.d-form {
+  width: 25%;
+}
+
 /* On 992px and below screens*/
 @media screen and (max-width: 992px) {
   .dash-h {
@@ -138,8 +142,8 @@
 
 /* On 767px screens and below, set height to 'auto' for the grid */
 @media screen and (max-width: 767px) {
-  .row.content {
-    height: auto;
+  .d-form {
+    width: 75%;
   }
 }
 

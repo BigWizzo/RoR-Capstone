@@ -17,7 +17,7 @@
     <% end %>
     <% if flash[:alert] %>
     	<div class="alert-danger mb-0" role="alert">
-    		<p class="alert"><%= alert %></p>
+    		<p class="alert mb-0"><%= alert %></p>
     	</div>
     <% end %>
 
@@ -30,10 +30,10 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="lt-gray-clr nav-a" href="#">LOGO</a>
+            <%= link_to 'Home', root_path, class: 'lt-gray-clr nav-a' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'All Clockings', root_path, class: 'lt-gray-clr nav-a' %>
+            <%= link_to 'All Clockings', all_path, class: 'lt-gray-clr nav-a' %>
           </li>
           <li class="nav-item">
             <%= link_to 'External Clockings', external_path, class: 'lt-gray-clr nav-a' %>
@@ -50,7 +50,7 @@
           <li class="nav-item">
             <%= render 'devise/menu/login_items' %>
           </li>
-        </ul><br>
+        </ul>
       </div>
     </nav>
     <%= yield %>
