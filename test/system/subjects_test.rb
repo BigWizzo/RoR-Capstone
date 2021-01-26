@@ -1,49 +1,49 @@
-require "application_system_test_case"
+require 'application_system_test_case'
 
 class SubjectsTest < ApplicationSystemTestCase
   setup do
     @subject = subjects(:one)
   end
 
-  test "visiting the index" do
+  test 'visiting the index' do
     visit subjects_url
-    assert_selector "h1", text: "Subjects"
+    assert_selector 'h1', text: 'Subjects'
   end
 
-  test "creating a Subject" do
+  test 'creating a Subject' do
     visit subjects_url
-    click_on "New Subject"
+    click_on 'New Subject'
 
-    fill_in "Description", with: @subject.description
-    fill_in "Duration", with: @subject.duration
-    fill_in "Student", with: @subject.student_id
-    fill_in "Title", with: @subject.title
-    click_on "Create Subject"
+    fill_in 'Description', with: @subject.description
+    fill_in 'Duration', with: @subject.duration
+    fill_in 'Student', with: @subject.student_id
+    fill_in 'Title', with: @subject.title
+    click_on 'Create Subject'
 
-    assert_text "Subject was successfully created"
-    click_on "Back"
+    assert_text 'Subject was successfully created'
+    click_on 'Back'
   end
 
-  test "updating a Subject" do
+  test 'updating a Subject' do
     visit subjects_url
-    click_on "Edit", match: :first
+    click_on 'Edit', match: :first
 
-    fill_in "Description", with: @subject.description
-    fill_in "Duration", with: @subject.duration
-    fill_in "Student", with: @subject.student_id
-    fill_in "Title", with: @subject.title
-    click_on "Update Subject"
+    fill_in 'Description', with: @subject.description
+    fill_in 'Duration', with: @subject.duration
+    fill_in 'Student', with: @subject.student_id
+    fill_in 'Title', with: @subject.title
+    click_on 'Update Subject'
 
-    assert_text "Subject was successfully updated"
-    click_on "Back"
+    assert_text 'Subject was successfully updated'
+    click_on 'Back'
   end
 
-  test "destroying a Subject" do
+  test 'destroying a Subject' do
     visit subjects_url
     page.accept_confirm do
-      click_on "Destroy", match: :first
+      click_on 'Destroy', match: :first
     end
 
-    assert_text "Subject was successfully destroyed"
+    assert_text 'Subject was successfully destroyed'
   end
 end

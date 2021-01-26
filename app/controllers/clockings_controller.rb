@@ -1,7 +1,7 @@
 class ClockingsController < ApplicationController
   before_action :authenticate_student!
-  before_action :get_subject
-  before_action :set_clocking, only: [:show, :edit, :update, :destroy]
+  before_action :for_subject
+  before_action :set_clocking, only: %i[show edit update destroy]
 
   def index
     @clockings = @subject.clockings
@@ -46,15 +46,15 @@ class ClockingsController < ApplicationController
 
   private
 
-    def get_subject
-      @subject = Subject.find(params[:subject_id])
-    end
+  def for_subject
+    @subject = Subject.find(params[:subject_id])
+  end
 
-    def set_clocking
-      @clocking = @subject.clockings.find(params[:id])
-    end
+  def set_clocking
+    @clocking = @subject.clockings.find(params[:id])
+  end
 
-    def clocking_params
-      params.require(:clocking).permit(:topic, :details, :duration)
-    end
+  def clocking_params
+    params.require(:clocking).permit(:topic, :details, :duration)
+  end
 end

@@ -19,7 +19,7 @@ RSpec.describe 'Student Sign up/in' do
     fill_in 'student[password]', with: 'mypassword'
     fill_in 'student[password_confirmation]', with: 'mypassword'
     click_on 'commit'
-    expect(page).to have_text("Username is too short")
+    expect(page).to have_text('Username is too short')
   end
 
   it 'Fails to Sign up a student if username is too given' do
@@ -33,7 +33,7 @@ RSpec.describe 'Student Sign up/in' do
 
   it 'Signs in a new student and redirects to the Home page' do
     Student.create(username: 'myname', email: 'myname@email.com', password: 'mypassword',
-                password_confirmation: 'mypassword')
+                   password_confirmation: 'mypassword')
 
     visit 'students/sign_in'
     fill_in 'student[username]', with: 'myname'
