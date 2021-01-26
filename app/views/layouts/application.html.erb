@@ -11,12 +11,12 @@
 
   <body>
     <% if flash[:notice] %>
-    	<div class="alert alert-success" role="alert">
+    	<div class="alert alert-success mb-0" role="alert">
     		<p class="notice"><%= notice %></p>
     	</div>
     <% end %>
     <% if flash[:alert] %>
-    	<div class="alert alert-danger" role="alert">
+    	<div class="alert alert-danger mb-0" role="alert">
     		<p class="alert"><%= alert %></p>
     	</div>
     <% end %>
@@ -33,7 +33,9 @@
             <a class="nav-link" href="#">LOGO</a>
           </li>
           <li class="nav-item">
-            <%= current_student.username %>
+            <%if student_signed_in? %>
+              <%= current_student.username %>
+            <%end%>
           </li>
           <li class="nav-item">
             <%= link_to 'All Clockings', root_path, class: 'nav-link' %>
