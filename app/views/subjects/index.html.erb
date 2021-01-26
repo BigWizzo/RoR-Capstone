@@ -19,11 +19,7 @@
           <div class="card mb-3">
             <div class="row no-gutters">
               <div class="col-3 card-wrap">
-                <%if subject.title != "External"%>
-                  <%= image_tag(subject.icon.variant(extent: "10:7"), class: "card-img") %>
-                <%elsif subject.title == "External"%>
-                  <%= image_tag("default.jpg", class: "card-img") %>
-                <%end%>
+                <%= check_external(subject) %>
               </div>
               <div class="col-7">
                   <div class="card-body py-1">
