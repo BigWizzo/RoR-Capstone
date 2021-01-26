@@ -1,0 +1,29 @@
+<div class="d-none d-md-block">
+  <h1 class="p-3 text-center m-0 blue-bg lt-gray-clr">Home Page</h1>
+</div>
+
+<div class="container-fluid">
+  <div class="row content">    
+    <div class="col-12">
+      <div class="d-form m-auto pt-4">
+        <ul class="list-group list-group-flush text-center">
+          <li class="list-group-item">
+            <%= link_to 'All Clockings', all_path, class: 'home-link' %>
+          </li>
+          <li class="list-group-item">
+            <%= link_to 'External Clockings', external_path, class: 'home-link' %>
+          </li>
+          <li class="list-group-item">
+            <%= link_to 'All Subjects', subjects_path, class: 'home-link' %>
+          </li>
+          <li class="list-group-item">
+            <%= link_to 'New Subject', new_subject_path, class: 'home-link' %>
+          </li>
+          <li class="list-group-item">
+            <%= link_to 'New Clocking', select_path, class: 'home-link' %>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>

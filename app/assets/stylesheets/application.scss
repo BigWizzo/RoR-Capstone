@@ -1,0 +1,170 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ */
+
+@import "bootstrap";
+
+/* colors here */
+.gray-clr {
+  color: #d3d3d3;
+}
+
+.gray-bg {
+  background: #d3d3d3;
+}
+
+.lt-gray-clr {
+  color: #f3f3f3;
+}
+
+.lt-gray-bg {
+  background: #f8f9fa;
+}
+
+.blue-clr {
+  color: #3778c2;
+}
+
+.blue-bg {
+  background: #3778c2;
+}
+
+.green-clr {
+  color: #5fb523;
+}
+
+.green-bg {
+  background: #5fb523;
+}
+
+.lt-blue-clr {
+  color: #0f4275;
+}
+
+.lt-black-bg {
+  background: #1234565c;
+}
+
+/* fonts here */
+.font-11 {
+  font-size: 11px;
+}
+
+.font-12 {
+  font-size: 12px;
+}
+
+.font-13 {
+  font-size: 13px;
+}
+
+.font-14 {
+  font-size: 14px;
+}
+
+.font-15 {
+  font-size: 15px;
+}
+
+.font-16 {
+  font-size: 16px;
+}
+
+.font-18 {
+  font-size: 18px;
+}
+
+.font-20 {
+  font-size: 20px;
+}
+
+.font-35 {
+  font-size: 32px;
+}
+
+.w-90 {
+  width: 90%;
+}
+
+.remove-external {
+  display: none;
+}
+
+.side-nav {
+  height: 100vh;
+}
+
+/* Set gray background color and 100% height */
+.sidenav {
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+.d-form {
+  width: 25%;
+}
+
+@media screen and (max-width: 992px) {
+  .dash-h {
+    font-size: 20px;
+  }
+
+  .card-title {
+    font-size: 18px;
+  }
+
+  .dash-p {
+    font-size: 14px;
+  }
+
+  .card-text {
+    font-size: 11px;
+  }
+
+  .card-detail {
+    font-size: 14px;
+  }
+
+  .task {
+    font-size: 12px;
+  }
+}
+
+/* On 767px screens and below */
+@media screen and (max-width: 767px) {
+  .d-form {
+    width: 75%;
+  }
+}
+
+/* On 592px screens and below, set height to 'auto' for the grid */
+@media screen and (max-width: 592px) {
+  .card-title {
+    font-size: 16px;
+  }
+
+  .card-text {
+    font-size: 11px;
+  }
+
+  .card-detail {
+    font-size: 13px;
+  }
+
+  .card-wrap {
+    max-height: 200px;
+  }
+
+  .card-img {
+    height: 100%;
+  }
+}

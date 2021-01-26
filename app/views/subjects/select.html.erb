@@ -1,0 +1,29 @@
+<div class="d-none d-md-block">
+  <h1 class="p-3 text-center m-0 blue-bg lt-gray-clr">Select Subject</h1>
+</div>
+
+<div class="container-fluid">
+  <div class="row content">
+
+  <%= render 'subjects/nav' %>
+
+    <div class="col-md-9">
+
+      <p class="text-center pt-3">Please select the Subject for your Clocking below otherwise
+        <strong><%= link_to 'create a new Subject', new_subject_path%></strong>
+      </p>
+
+      <div class="select">
+        <div class="d-form m-auto pt-4">
+          <ul class="list-group list-group-flush text-center">
+            <% @subjects.each do |subject| %>
+              <li class="list-group-item">
+                <%= link_to subject.title, new_subject_clocking_path(subject_id: subject.id), method: :get %>
+              </li>
+            <%end%>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
