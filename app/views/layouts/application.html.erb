@@ -32,19 +32,17 @@
           <li class="nav-item">
             <a class="lt-gray-clr nav-a" href="#">LOGO</a>
           </li>
-          <li class="nav-item lt-gray-clr">
-            <%if student_signed_in? %>
-              <%= current_student.username %>
-            <%end%>
-          </li>
           <li class="nav-item">
             <%= link_to 'All Clockings', root_path, class: 'lt-gray-clr nav-a' %>
+          </li>
+          <li class="nav-item">
+            <%= link_to 'External Clockings', external_path, class: 'lt-gray-clr nav-a' %>
           </li>
           <li class="nav-item">
             <%= link_to 'All Subjects', subjects_path, class: 'lt-gray-clr nav-a' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'External Clockings', external_path, class: 'lt-gray-clr nav-a' %>
+            <%= link_to 'New Subject', new_subject_path, class: 'lt-gray-clr nav-a' %>
           </li>
           <li class="nav-item">
             <%= link_to 'New Clocking', select_path, class: 'lt-gray-clr nav-a' %>
