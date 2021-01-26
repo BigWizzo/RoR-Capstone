@@ -1,9 +1,9 @@
 <% if student_signed_in? %>
   <li>
-  <%= link_to('Edit registration', edit_student_registration_path) %>
+  <%= link_to('Edit registration', edit_student_registration_path, class: "lt-gray-clr") %>
   </li>
 <% else %>
   <li>
-  <%= link_to('Register', new_student_registration_path) %>
+  <%= link_to('Register', new_student_registration_path, class: "lt-gray-clr") %>
   </li>
 <% end %>

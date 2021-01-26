@@ -12,7 +12,7 @@
   <body>
     <% if flash[:notice] %>
     	<div class="alert-success mb-0" role="alert">
-    		<p class="notice"><%= notice %></p>
+    		<p class="alert notice mb-0"><%= notice %></p>
     	</div>
     <% end %>
     <% if flash[:alert] %>
@@ -30,24 +30,24 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link" href="#">LOGO</a>
+            <a class="lt-gray-clr nav-a" href="#">LOGO</a>
           </li>
-          <li class="nav-item">
+          <li class="nav-item lt-gray-clr">
             <%if student_signed_in? %>
               <%= current_student.username %>
             <%end%>
           </li>
           <li class="nav-item">
-            <%= link_to 'All Clockings', root_path, class: 'nav-link' %>
+            <%= link_to 'All Clockings', root_path, class: 'lt-gray-clr nav-a' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'All Subjects', subjects_path, class: 'nav-link' %>
+            <%= link_to 'All Subjects', subjects_path, class: 'lt-gray-clr nav-a' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'External Clockings', external_path, class: 'nav-link' %>
+            <%= link_to 'External Clockings', external_path, class: 'lt-gray-clr nav-a' %>
           </li>
           <li class="nav-item">
-            <%= link_to 'New Clocking', select_path, class: 'nav-link' %>
+            <%= link_to 'New Clocking', select_path, class: 'lt-gray-clr nav-a' %>
           </li>
           <li class="nav-item">
             <%= render 'devise/menu/login_items' %>

@@ -1,9 +1,9 @@
 <% if student_signed_in? %>
   <li>
-  <%= link_to('Logout', destroy_student_session_path, method: :delete) %>        
+  <%= link_to('Logout', destroy_student_session_path, method: :delete, class: "lt-gray-clr") %>        
   </li>
 <% else %>
   <li>
-  <%= link_to('Login', new_student_session_path) %>  
+  <%= link_to('Login', new_student_session_path, class: "lt-gray-clr") %>  
   </li>
 <% end %>
