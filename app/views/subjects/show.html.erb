@@ -10,15 +10,15 @@
   <%= render 'subjects/nav' %>
     
     <div class="col-md-9">
+      <div class="new-clock text-center py-3">
+        <%= link_to 'Create new Clocking', new_subject_clocking_path(@subject), class: 'font-18' %>  for
+        <%= @subject.title%>
+      </div>
       <% for clocking in @subject.clockings %>
         <div class="card mb-3">
           <div class="row no-gutters">
             <div class="col-3 card-wrap">
-              <%if @subject.title != "External"%>
-                <%= image_tag(@subject.icon.variant(extent: "10:7"), class: "card-img") %>
-              <%elsif @subject.title == "External"%>
-                <%= image_tag("default.jpg", class: "card-img") %>
-              <%end%>
+              <%= check_external(@subject)%>
             </div>
             <div class="col-7">
               <div class="card-body py-1">
