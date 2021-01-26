@@ -9,10 +9,13 @@
         <%= link_to 'All Clockings', root_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
+        <%= link_to 'External Clockings', external_path, class: 'nav-link' %>
+      </li>
+      <li class="nav-item">
         <%= link_to 'All Subjects', subjects_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
-        <%= link_to 'External Clockings', external_path, class: 'nav-link' %>
+        <%= link_to 'External Clockings', new_subject_path, class: 'nav-link' %>
       </li>
       <li class="nav-item">
         <%= link_to 'New Clocking', select_path, class: 'nav-link' %>
