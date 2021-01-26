@@ -1,0 +1,34 @@
+<div class="d-form m-auto">
+<%= form_with(model: [@subject, clocking], local: true) do |form| %>
+  <% if clocking.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(clocking.errors.count, "error") %> prohibited this clocking from being saved:</h2>
+
+      <ul>
+      <% clocking.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="form-group field">
+    <%= form.label :topic %>
+    <%= form.text_field :topic, class: "form-control",  autofocus: true %>
+  </div>
+
+  <div class="form-group field">
+    <%= form.label :details %>
+    <%= form.text_field :details, class: "form-control" %>
+  </div>
+
+  <div class="form-group field">
+    <%= form.label :duration %>
+    <%= form.number_field :duration, class: "form-control", min: 0, max: 24 %>
+  </div>
+
+  <div class="form-group actions">
+    <%= form.submit "Create Clocking", class: "btn btn-primary btn-lg btn-block" %>
+  </div>
+<% end %>
+

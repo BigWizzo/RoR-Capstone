@@ -1,0 +1,52 @@
+<div class="d-none d-md-block">
+  <h1 class="p-3 text-center m-0 blue-bg lt-gray-clr">External Clockings</h1>
+</div>
+
+<div class="container-fluid">
+  <div class="row content">
+
+  <%= render 'subjects/nav' %>
+    
+    <div class="col-md-9">
+      <%= render 'subjects/dashboard'%>
+      <div class="chunk container pt-3">
+        <div class="row">
+          <div class="clock-type col-10">
+            <h4>All non subject based clockings</h4>
+          </div>
+          <div class="clock-total col-2 mt-3 text-center">
+            <%= count_external_clock %> Hours
+          </div>
+        </div>
+      </div>
+      <% @subjects.each do |subject| %>
+        <% subject.clockings.each do |clocking| %>
+          <%if subject.title == "External"%>
+            <div class="card mb-3">
+              <div class="row no-gutters">
+                <div class="col-3 card-wrap">
+                  <%= check_external(subject) %>
+                </div>
+                <div class="col-7">
+                  <div class="card-body py-1">
+                    <h5 class="card-title m-0"><%= clocking.topic %></h5>
+                    <p class="card-text mb-2">
+                      <small class="text-muted"><%=subject.title%>: </small>
+                      <small class="text-muted">
+                        Created: <%= clocking.created_at.strftime("#{clocking.created_at.day.ordinalize} %B %Y") %>
+                      </small>
+                    </p>
+                    <p class="card-detail mb-2"><%= clocking.details %></p>
+                  </div>
+                </div>
+                <div class="col-2">
+                  <h5 class="row justify-content-center m-3"><%= clocking.duration %> Hours</h5>
+                </div>
+              </div>
+            </div>
+          <%end%>
+        <% end %>
+      <%end%>
+    </div>
+  </div>
+</div>

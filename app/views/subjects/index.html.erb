@@ -1,0 +1,48 @@
+<div class="d-none d-md-block">
+  <h1 class="p-3 text-center m-0 blue-bg lt-gray-clr">All Subjects</h1>
+</div>
+
+<div class="container-fluid">
+  <div class="row content">
+
+  <%= render 'subjects/nav' %>
+    
+    <div class="col-md-9">
+      <div class="chunk container pt-3">
+        <div class="row">
+          <div class="clock-type col-10">
+            <h4>All Subjects</h4>
+          </div>
+        </div>
+      </div>
+      <% @subjects.each do |subject| %>          
+          <div class="card mb-3">
+            <div class="row no-gutters">
+              <div class="col-3 card-wrap">
+                <%= check_external(subject) %>
+              </div>
+              <div class="col-7">
+                  <div class="card-body py-1">
+                    <h5 class="card-title m-0"><%= subject.title %></h5>
+                    <p class="card-text mb-2">
+                      <small class="text-muted">
+                        Created: <%= subject.created_at.strftime("#{subject.created_at.day.ordinalize} %B %Y") %>
+                      </small>
+                    </p>
+                    <p class="card-detail mb-2"><%= subject.description %></p>
+                  </div>
+              </div>
+              <div class="col-2 task">
+                <div class="<%= 'remove-external' if subject.title == 'External' %>">
+                  <p class="task-p mb-2"><%= link_to 'Show', subject %></p>
+                  <p class="task-p mb-2"><%= link_to 'Edit', edit_subject_path(subject) %></p>
+                  <p class="task-p mb-2"><%= link_to 'Destroy', subject, method: :delete, data: { confirm: 'Are you sure?' } %></p>
+                </div>
+              </div>
+            </div>
+          </div>
+      <%end%>
+    </div>
+  </div>
+</div>
+
