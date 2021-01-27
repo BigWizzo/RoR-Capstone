@@ -1,6 +1,11 @@
-<div class="d-none d-md-block">
-  <h1 class="p-3 text-center m-0 blue-bg lt-gray-clr">External Clockings</h1>
-</div>
+<%# <div class="d-none d-md-block"> %>
+  <%# <h1 class="p-3 text-center m-0 blue-bg lt-gray-clr">External Clockings</h1> %>
+<%# </div> %>
+<% content_for :h1, "EXTERNAL CLOCKINGS" %>
+<% content_for :study_mate, "EXTERNAL CLOCKINGS" %>
+<% content_for :h4, "External based clockings" %>
+
+<%= render 'subjects/top' %>
 
 <div class="container-fluid">
   <div class="row content">
@@ -9,21 +14,11 @@
     
     <div class="col-md-9">
       <%= render 'subjects/dashboard'%>
-      <div class="chunk container pt-3">
-        <div class="row">
-          <div class="clock-type col-10">
-            <h4>All non subject based clockings</h4>
-          </div>
-          <div class="clock-total col-2 mt-3 text-center">
-            <%= count_external_clock %> Hours
-          </div>
-        </div>
-      </div>
       <% @subjects.each do |subject| %>
         <% subject.clockings.each do |clocking| %>
-          <%if subject.title == "External"%>
-            <div class="card mb-3">
-              <div class="row no-gutters">
+          <%if subject.title == "External" %>
+            <div class="card gutter my-4 border-0">
+              <div class="row p-2">
                 <div class="col-3 card-wrap">
                   <%= check_external(subject) %>
                 </div>
@@ -31,7 +26,6 @@
                   <div class="card-body py-1">
                     <h5 class="card-title m-0"><%= clocking.topic %></h5>
                     <p class="card-text mb-2">
-                      <small class="text-muted"><%=subject.title%>: </small>
                       <small class="text-muted">
                         Created: <%= clocking.created_at.strftime("#{clocking.created_at.day.ordinalize} %B %Y") %>
                       </small>
@@ -44,7 +38,7 @@
                 </div>
               </div>
             </div>
-          <%end%>
+          <%end %>
         <% end %>
       <%end%>
     </div>
