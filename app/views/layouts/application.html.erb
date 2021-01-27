@@ -9,7 +9,7 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
-  <body>
+  <body class="gray-bg">
     <% if flash[:notice] %>
     	<div class="alert-success mb-0" role="alert">
     		<p class="alert notice mb-0"><%= notice %></p>
@@ -21,43 +21,21 @@
     	</div>
     <% end %>
 
-    <div class="d-none d-md-block">
-      <h1 class="p-3 text-center m-0 blue-bg lt-gray-clr"><%= yield(:h1) %></h1>
+    <div class="d-none d-md-block sticky-top">
+      <h1 class="p-3 text-center m-0 blue-bg lt-gray-clr font-weight-lighter"><%= yield(:h1) %></h1>
     </div>
 
-    <nav class="navbar navbar-toggleable-md navbar-light blue-bg d-md-none">
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+    <nav class="navbar navbar-toggleable-md navbar-light blue-bg d-md-none sticky-top py-4">
+      <button class="navbar-toggler col-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
         <span class="lt-gray-clr"><i class="fas fa-bars"></i></span>
       </button>
-      <strong><a class="font-20 lt-gray-clr study_mate" href="#"><%= yield(:study_mate) %></a></strong>
-      
+      <div class="row lt-gray-clr col-11 justify-content-around align-items-center">
+        <strong><a class="font-20 lt-gray-clr study_mate font-weight-lighter" href="#"><%= yield(:study_mate) %></a></strong>
+        <i class="fas fa-search px-2" aria-hidden="true"></i>
+      </div>
+
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
-        <ul class="list-group list-group-flush text-md-center blue-bg lt-gray-clr">
-          <li class="list-group-item blue-bg border-btm py-3">
-            <i class="fas fa-clock px-2" aria-hidden="true"></i>
-            <%= link_to 'All Clockings', all_path, class: 'home-link lt-gray-clr' %>
-          </li>
-          <li class="list-group-item blue-bg border-btm py-3">
-            <i class="fas fa-glass-cheers px-2" aria-hidden="true"></i>
-            <%= link_to 'External Clockings', external_path, class: 'home-link lt-gray-clr' %>
-          </li>
-          <li class="list-group-item blue-bg border-btm py-3">
-            <i class="fas fa-book px-2" aria-hidden="true"></i>
-            <%= link_to 'All Subjects', subjects_path, class: 'home-link lt-gray-clr' %>
-          </li>
-          <li class="list-group-item blue-bg border-btm py-3">
-            <i class="fas fa-book-open px-2" aria-hidden="true"></i>
-            <%= link_to 'New Subject', new_subject_path, class: 'home-link lt-gray-clr' %>
-          </li>
-          <li class="list-group-item blue-bg border-btm py-3">
-            <i class="fas fa-user-clock px-2" aria-hidden="true"></i>
-            <%= link_to 'New Clocking', select_path, class: 'home-link lt-gray-clr' %>
-          </li>
-          <li class="list-group-item blue-bg border-btm py-3">
-            <i class="fas fa-user-clock px-2" aria-hidden="true"></i>
-            <%= link_to('Logout', destroy_student_session_path, method: :delete, class: "home-link lt-gray-clr") %>
-         </li>
-        </ul>
+        <%= render 'layouts/mobile_nav'%>
       </div>
     </nav>
     <%= yield %>

@@ -1,7 +1,7 @@
-<div class="d-none d-md-block">
-  <h1 class="p-3 text-center m-0 blue-bg lt-gray-clr">Subject Clockings</h1>
-</div>
+<% content_for :h1, "SUBJECT CLOCKINGS" %>
+<% content_for :study_mate, "SUBJECT CLOCKINGS" %>
 
+<%= render 'subjects/top' %>
 <div class="container-fluid">
   <div class="row content">
 
@@ -9,16 +9,6 @@
     
     <div class="col-md-9">
       <%= render 'subjects/dashboard'%>
-      <div class="chunk container pt-3">
-        <div class="row">
-          <div class="clock-type col-10">
-            <h4>Subject based clockings</h4>
-          </div>
-          <div class="clock-total col-2 text-center">
-            <%= count_subject_clock %> Hours
-          </div>
-        </div>
-      </div>
       <%= render 'subjects/clock' %>
     </div>
   </div>
