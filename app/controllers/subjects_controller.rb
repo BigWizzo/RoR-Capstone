@@ -59,11 +59,6 @@ class SubjectsController < ApplicationController
 
   private
 
-<<<<<<< HEAD
-    def subject_params
-      params.require(:subject).permit(:title, :description, :icon)
-    end
-=======
   def set_subject
     @subject = Subject.find(params[:id])
   end
@@ -71,5 +66,4 @@ class SubjectsController < ApplicationController
   def subject_params
     params.require(:subject).permit(:title, :description, :icon)
   end
->>>>>>> main
 end
