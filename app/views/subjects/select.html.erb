@@ -1,13 +1,9 @@
 <% content_for :h1, "SELECT SUBJECT" %>
 <% content_for :study_mate, "SELECT SUBJECT" %>
-
 <div class="container-fluid">
   <div class="row content">
-
   <%= render 'subjects/nav' %>
-
-    <div class="col-md-9">
-
+    <div class="col-md-9 content-wrap">
       <p class="text-center pt-3">Please select the Subject for your Clocking below otherwise
         <strong><%= link_to 'create a new Subject', new_subject_path%></strong>
       </p>
