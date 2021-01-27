@@ -26,12 +26,14 @@
     </div>
 
     <nav class="navbar navbar-toggleable-md navbar-light blue-bg d-md-none sticky-top py-4">
-      <button class="navbar-toggler col-1" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="lt-gray-clr"><i class="fas fa-bars"></i></span>
-      </button>
-      <div class="row lt-gray-clr col-11 justify-content-around align-items-center">
-        <strong><a class="font-20 lt-gray-clr study_mate font-weight-lighter" href="#"><%= yield(:study_mate) %></a></strong>
-        <i class="fas fa-search px-2" aria-hidden="true"></i>
+      <div class="col-3">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="lt-gray-clr"><i class="fas fa-bars"></i></span>
+        </button>
+      </div>
+      <div class="row lt-gray-clr col-9 justify-content-around align-items-center">
+        <div class="page"><a class="font-20 lt-gray-clr study_mate font-weight-lighter" href="#"><%= yield(:study_mate) %></a></div>
+        <div class="search"><i class="fas fa-search px-2" aria-hidden="true"></i></div>
       </div>
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">

@@ -13,7 +13,6 @@
   <%= render 'subjects/nav' %>
     
     <div class="col-md-9">
-      <%= render 'subjects/dashboard'%>
       <% @subjects.each do |subject| %>
         <% subject.clockings.each do |clocking| %>
           <%if subject.title == "External" %>
