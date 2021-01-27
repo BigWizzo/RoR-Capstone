@@ -12,6 +12,8 @@
  */
 
 @import "bootstrap";
+// @import "font-awesome-sprockets";
+// @import "font-awesome";
 
 /* colors here */
 .gray-clr {
@@ -52,6 +54,10 @@
 
 .lt-black-bg {
   background: #1234565c;
+}
+
+.border-btm {
+  border-bottom: hsla(0, 0%, 95%, 0.233) solid 1px;
 }
 
 /* fonts here */

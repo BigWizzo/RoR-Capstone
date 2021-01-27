@@ -40,6 +40,7 @@ gem 'devise'
 gem 'hirb'
 gem 'image_processing'
 gem 'jquery-rails'
+gem 'font-awesome-sass'
 
 group :development, :test do
   gem 'rspec-rails'
