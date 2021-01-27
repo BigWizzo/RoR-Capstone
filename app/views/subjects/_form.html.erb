@@ -1,3 +1,4 @@
+<div class="d-form m-auto">
 <%= form_with(model: subject, local: true) do |form| %>
   <% if subject.errors.any? %>
     <div id="error_explanation">
@@ -11,22 +12,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group field">
     <%= form.label :title %>
-    <%= form.text_field :title %>
+    <%= form.text_field :title, class: "form-control", autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="form-group field">
     <%= form.label :description %>
-    <%= form.text_field :description %>
+    <%= form.text_field :description, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group field">
     <%= form.label :icon %>
-    <%= form.file_field :icon %>
+    <%= form.file_field :icon, class: "form-control" %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group actions">
+    <%= form.submit "Create Subject", class: "btn btn-primary btn-lg btn-block" %>
   </div>
 <% end %>
+</div>

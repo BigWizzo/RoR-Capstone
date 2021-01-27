@@ -1,3 +1,4 @@
+<div class="d-form m-auto">
 <%= form_with(model: [@subject, clocking], local: true) do |form| %>
   <% if clocking.errors.any? %>
     <div id="error_explanation">
@@ -11,22 +12,23 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="form-group field">
     <%= form.label :topic %>
-    <%= form.text_field :topic %>
+    <%= form.text_field :topic, class: "form-control",  autofocus: true %>
   </div>
 
-  <div class="field">
+  <div class="form-group field">
     <%= form.label :details %>
-    <%= form.text_field :details %>
+    <%= form.text_field :details, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="form-group field">
     <%= form.label :duration %>
-    <%= form.number_field :duration, min: 0, max: 24 %>
+    <%= form.number_field :duration, class: "form-control", min: 0, max: 24 %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group actions">
+    <%= form.submit "Create Clocking", class: "btn btn-primary btn-lg btn-block" %>
   </div>
 <% end %>
+

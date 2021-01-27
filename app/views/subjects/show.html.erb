@@ -1,30 +1,54 @@
-<%= link_to 'New Clocking', new_subject_clocking_path(@subject) %>
+<div class="d-none d-md-block">
+  <h1 class="p-3 text-center m-0 blue-bg lt-gray-clr">
+    <%=@subject.title%> Clockings
+  </h1>
+</div>
 
-<h2><%=@subject.title%></h2>
-  <table>
-  <thead>
-    <tr>
-      <th>Topic</th>
-      <th>Details</th>
-      <th>Duration</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
+<div class="container-fluid">
+  <div class="row content">
 
-  <tbody>
-    <% for clocking in @subject.clockings %>
-      <tr>
-        <td><%= clocking.topic %></td>
-        <td><%= clocking.details %></td>
-        <td><%= clocking.duration %></td>
-        <td><%= image_tag(@subject.icon) if @subject.icon.attached? %></td>
-        <td><%= link_to 'Edit Clocking', edit_subject_clocking_path(@subject, clocking) %></td>
-        <td><%= link_to 'Destroy Clocking', [@subject, clocking], method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
+  <%= render 'subjects/nav' %>
+    
+    <div class="col-md-9">
+      <div class="new-clock text-center py-3">
+        <%= link_to 'Create new Clocking', new_subject_clocking_path(@subject), class: 'font-18' %>  for
+        <%= @subject.title%>
+      </div>
+      <% for clocking in @subject.clockings %>
+        <div class="card mb-3">
+          <div class="row no-gutters">
+            <div class="col-3 card-wrap">
+              <%= check_external(@subject)%>
+            </div>
+            <div class="col-7">
+              <div class="card-body py-1">
+                <h5 class="card-title m-0"><%= clocking.topic %></h5>
+                <p class="card-text mb-2">
+                  <small class="text-muted">
+                    Created: <%= clocking.created_at.strftime("#{clocking.created_at.day.ordinalize} %B %Y") %>
+                  </small>
+                </p>
+                <p class="card-detail mb-2"><%= clocking.details %></p>
+              </div>
+            </div>
+            <div class="col-2">
+              <h5 class="row justify-content-center m-3"><%= clocking.duration %> Hours</h5>
+              <div>
+                <span>
+                  <%= link_to 'Edit', edit_subject_clocking_path(@subject, clocking) %>
+                </span>
+                <span>
+                  <%= link_to 'Destroy', [@subject, clocking], method: :delete, data: { confirm: 'Are you sure?' } %>
+                </span>
+              </div>
+            </div>
+          </div>
+        </div>
+      <%end%>
+    </div>
 
-<%= link_to 'Edit', edit_subject_path(@subject) %> |
-<%= link_to 'New Clocking', new_subject_clocking_path(@subject) %> |
-<%= link_to 'Back', subjects_path %>
+    <%= link_to 'Edit', edit_subject_path(@subject) %> |
+    <%= link_to 'New Clocking', new_subject_clocking_path(@subject) %> |
+    <%= link_to 'Back to All Subjects', subjects_path %>
+  </div>
+</div>

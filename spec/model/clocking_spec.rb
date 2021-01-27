@@ -9,7 +9,10 @@ RSpec.describe Clocking, type: :model do
   end
 
   describe 'associations' do
+<<<<<<< HEAD
     it { should belong_to(:student) }
+=======
+>>>>>>> main
     it { should belong_to(:subject) }
   end
 end
