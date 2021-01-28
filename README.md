@@ -7,6 +7,8 @@
 
 ## Entity Relationship Diagram
 
+![alt tag]https://github.com/BigWizzo/RoR-Capstone/blob/deploy/erd.png "erd")
+
 ## Built With
 
 - Ruby v2.7.0
