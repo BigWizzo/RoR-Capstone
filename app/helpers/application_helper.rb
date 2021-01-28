@@ -18,5 +18,4 @@ module ApplicationHelper
     end
     count
   end
-
 end
