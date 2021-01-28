@@ -1,10 +1,10 @@
 class SubjectsController < ApplicationController
-  include SubjectsHelper
+  # include SubjectsHelper
   before_action :authenticate_student!
   before_action :set_subject, only: %i[show edit update destroy]
 
   def index
-    @subjects = current_student.subjects#.includes(:icon_attachment)
+    @subjects = current_student.subjects
   end
 
   def all
