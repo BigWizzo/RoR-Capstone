@@ -60,7 +60,7 @@ To get a local copy up and running follow these simple example steps.
 ### Deployment
 
 - In the console
-- run `create heroku`
+- run `heroku create`
 - run `git push heroku main`
 - run `heroku run rake db:migrate`
 - run `heroku open` to open the application
