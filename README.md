@@ -7,7 +7,7 @@
 
 ## Entity Relationship Diagram
 
-![alt tag]https://github.com/BigWizzo/RoR-Capstone/blob/deploy/erd.png "erd")
+![ScreenShot](https://github.com/BigWizzo/RoR-Capstone/blob/deploy/erd.png)
 
 ## Built With
 
