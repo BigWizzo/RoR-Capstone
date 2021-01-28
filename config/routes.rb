@@ -1,11 +1,9 @@
 Rails.application.routes.draw do
   resources :subjects do
-    resources :clockings
+    resources :clockings, except: [:index, :show]
   end
   devise_for :students, :controllers => { registrations: 'registrations'}
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
   root to: "subjects#home"
-
   get 'home', to: 'subjects#home'
   get 'all', to: 'subjects#all'
   get 'select', to: 'subjects#select'

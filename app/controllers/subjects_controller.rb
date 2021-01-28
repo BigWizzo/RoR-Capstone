@@ -18,8 +18,6 @@ class SubjectsController < ApplicationController
     @subjects = current_student.subjects
   end
 
-  def show; end
-
   def new
     @subject = current_student.subjects.new
   end
