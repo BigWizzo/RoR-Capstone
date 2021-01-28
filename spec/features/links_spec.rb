@@ -12,35 +12,35 @@ RSpec.describe 'Test navigation links' do
 
   it 'Send student to the All Clockings page' do
     visit root_path
-    first(".all").click
+    first('.all').click
     expect(current_path).to eql(all_path)
     expect(page).to have_text('SUBJECT CLOCKINGS')
   end
 
   it 'Send student to the External Clockings page' do
     visit root_path
-    first(".external").click
+    first('.external').click
     expect(current_path).to eql(external_path)
     expect(page).to have_text('EXTERNAL CLOCKINGS')
   end
 
   it 'Send student to the All Subjects page' do
     visit root_path
-    first(".subjects").click
+    first('.subjects').click
     expect(current_path).to eql(subjects_path)
     expect(page).to have_text('ALL SUBJECTS')
   end
 
   it 'Send student to the New Subject form page' do
     visit root_path
-    first(".new-sub").click
+    first('.new-sub').click
     expect(current_path).to eql(new_subject_path)
     expect(page).to have_text('New Subject')
   end
 
   it 'Send student to the All Subjects page' do
     visit root_path
-    first(".new-clock").click
+    first('.new-clock').click
     expect(current_path).to eql(select_path)
     expect(page).to have_text('SELECT SUBJECT')
   end
