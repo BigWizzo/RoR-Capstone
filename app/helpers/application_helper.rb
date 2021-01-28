@@ -19,7 +19,4 @@ module ApplicationHelper
     count
   end
 
-  def total_hours
-    count_subject_clock + count_external_clock
-  end
 end

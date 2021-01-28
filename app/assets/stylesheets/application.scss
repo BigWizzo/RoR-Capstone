@@ -140,12 +140,17 @@
   width: 25%;
 }
 
+.side-menu {
+  position: relative;
+  z-index: 1;
+}
+
 .footer {
   position: fixed;
   left: 0;
   bottom: 0;
   color: white;
-  z-index: 1;
+  z-index: 2;
 }
 
 @media screen and (max-width: 992px) {

@@ -1,5 +1,4 @@
 class SubjectsController < ApplicationController
-  # include SubjectsHelper
   before_action :authenticate_student!
   before_action :set_subject, only: %i[show edit update destroy]
 
