@@ -4,8 +4,6 @@
     <div class="clock-type col-9 col-md-5">
       <h4 class="font-16 font-weight-normal text-secondary"><%= yield(:h4) %></h4>
     </div>
-    <div class="clock-total col-3 col-md-2 text-center">
-      <%= count_external_clock %> Hours
-    </div>
+    <div class="clock-total col-3 col-md-2 text-center"><%= yield(:count) %></div>
   </div>
 </div>
