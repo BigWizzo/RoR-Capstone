@@ -2,40 +2,34 @@
 <% content_for :study_mate, "EXTERNAL CLOCKINGS" %>
 <% content_for :h4, "External based clockings" %>
 <% content_for :count, "#{count_external_clock} Hours" %>
-
 <%= render 'subjects/top' %>
-
 <div class="container-fluid">
   <div class="row content">
-
   <%= render 'subjects/nav' %>
-    
     <div class="col-md-9 content-wrap">
-      <% @subjects.each do |subject| %>
+      <% @external.each do |subject| %>
         <% subject.clockings.each do |clocking| %>
-          <%if subject.title == "External" %>
-            <div class="card gutter my-4 border-0">
-              <div class="row p-2">
-                <div class="col-3 card-wrap">
-                  <%= check_external(subject) %>
-                </div>
-                <div class="col-7">
-                  <div class="card-body py-1">
-                    <h5 class="card-title m-0"><%= clocking.topic %></h5>
-                    <p class="card-text mb-2">
-                      <small class="text-muted">
-                        Created: <%= clocking.created_at.strftime("#{clocking.created_at.day.ordinalize} %B %Y") %>
-                      </small>
-                    </p>
-                    <p class="card-detail mb-2"><%= clocking.details %></p>
-                  </div>
-                </div>
-                <div class="col-2">
-                  <h5 class="row justify-content-center m-3"><%= clocking.duration %> Hours</h5>
+          <div class="card gutter my-4 border-0">
+            <div class="row p-2">
+              <div class="col-3 card-wrap">
+                <%= check_external(subject) %>
+              </div>
+              <div class="col-7">
+                <div class="card-body py-1">
+                  <h5 class="card-title m-0"><%= clocking.topic %></h5>
+                  <p class="card-text mb-2">
+                    <small class="text-muted">
+                      Created: <%= clocking.created_at.strftime("#{clocking.created_at.day.ordinalize} %B %Y") %>
+                    </small>
+                  </p>
+                  <p class="card-detail mb-2"><%= clocking.details %></p>
                 </div>
               </div>
+              <div class="col-2">
+                <h5 class="row justify-content-center m-3"><%= clocking.duration %> Hours</h5>
+              </div>
             </div>
-          <%end %>
+          </div>
         <% end %>
       <%end%>
     </div>

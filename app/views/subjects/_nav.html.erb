@@ -1,34 +1,5 @@
 <div class="col-md-3 hidden-xs py-md-0 px-0">
-  <nav class="side-nav navbar green-bg d-none d-md-block sticky-top">
-    <ul class="list-group list-group-flush lt-gray-clr">
-      <li class="list-group-item green-bg border-btm py-3">
-        <i class="fas fa-home px-2" aria-hidden="true"></i>
-        <%= link_to 'Home', root_path, class: 'home-link lt-gray-clr' %>
-      </li>
-      <li class="list-group-item green-bg border-btm py-3">
-        <i class="fas fa-clock px-2" aria-hidden="true"></i>
-        <%= link_to 'All Clockings', all_path, class: 'home-link lt-gray-clr' %>
-      </li>
-      <li class="list-group-item green-bg border-btm py-3">
-        <i class="fas fa-glass-cheers px-2" aria-hidden="true"></i>
-        <%= link_to 'External Clockings', external_path, class: 'home-link lt-gray-clr' %>
-      </li>
-      <li class="list-group-item green-bg border-btm py-3">
-        <i class="fas fa-book px-2" aria-hidden="true"></i>
-        <%= link_to 'All Subjects', subjects_path, class: 'home-link lt-gray-clr' %>
-      </li>
-      <li class="list-group-item green-bg border-btm py-3">
-        <i class="fas fa-book-open px-2" aria-hidden="true"></i>
-        <%= link_to 'New Subject', new_subject_path, class: 'home-link lt-gray-clr' %>
-      </li>
-      <li class="list-group-item green-bg border-btm py-3">
-        <i class="fas fa-user-clock px-2" aria-hidden="true"></i>
-        <%= link_to 'New Clocking', select_path, class: 'home-link lt-gray-clr' %>
-      </li>
-      <li class="list-group-item green-bg border-btm py-3">
-        <i class="fas fa-user-clock px-2" aria-hidden="true"></i>
-        <%= link_to('Logout', destroy_student_session_path, method: :delete, class: "home-link lt-gray-clr") %>
-     </li>
-    </ul>
+  <nav class="side-nav navbar blue-bg d-none d-md-block sticky-top">
+    <%= render 'layouts/mobile_nav'%>
   </nav>
 </div>

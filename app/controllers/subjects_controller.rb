@@ -1,13 +1,14 @@
 class SubjectsController < ApplicationController
+  include SubjectsHelper
   before_action :authenticate_student!
   before_action :set_subject, only: %i[show edit update destroy]
 
   def index
-    @subjects = current_student.subjects.includes(:icon_attachment)
+    @subjects = current_student.subjects#.includes(:icon_attachment)
   end
 
   def all
-    @subjects = current_student.subjects.includes(:clockings, :icon_attachment)
+    @all = current_student.subjects.internal
   end
 
   def select
@@ -15,7 +16,7 @@ class SubjectsController < ApplicationController
   end
 
   def external
-    @subjects = current_student.subjects.includes(:clockings)
+    @external = current_student.subjects.external
   end
 
   def new
