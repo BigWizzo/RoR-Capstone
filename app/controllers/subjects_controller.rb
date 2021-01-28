@@ -3,11 +3,11 @@ class SubjectsController < ApplicationController
   before_action :set_subject, only: %i[show edit update destroy]
 
   def index
-    @subjects = current_student.subjects
+    @subjects = current_student.subjects.includes(:icon_attachment)
   end
 
   def all
-    @subjects = current_student.subjects
+    @subjects = current_student.subjects.includes(:clockings, :icon_attachment)
   end
 
   def select
@@ -15,7 +15,7 @@ class SubjectsController < ApplicationController
   end
 
   def external
-    @subjects = current_student.subjects
+    @subjects = current_student.subjects.includes(:clockings)
   end
 
   def new
