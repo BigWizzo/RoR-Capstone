@@ -3,7 +3,7 @@ class SubjectsController < ApplicationController
   before_action :set_subject, only: %i[show edit update destroy]
 
   def index
-    @subjects = current_student.subjects
+    @subjects = Subject.all
   end
 
   def all

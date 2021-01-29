@@ -10,11 +10,4 @@ class Student < ApplicationRecord
   has_many :subjects, dependent: :destroy
   has_many :clockings, dependent: :destroy
 
-  after_save :external
-
-  def external
-    return unless Subject.where(student_id: id, title: 'External').empty?
-
-    Subject.create(student_id: id, title: 'External', description: 'For all your non Subject Clockings')
-  end
 end
