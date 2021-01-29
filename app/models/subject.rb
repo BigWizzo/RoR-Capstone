@@ -13,6 +13,4 @@ class Subject < ApplicationRecord
     errors.add(:icon, 'Must be a JPEG or PNG')
   end
 
-  scope :internal, -> { where('title != ?', 'External') }
-  scope :external, -> { where('title = ? ', 'External') }
 end
