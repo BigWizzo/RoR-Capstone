@@ -7,8 +7,8 @@ class Student < ApplicationRecord
   validates :email, presence: true, uniqueness: true
   validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 25 }
 
-  has_many :subjects
-  has_many :clockings
+  has_many :subjects, dependent: :destroy
+  has_many :clockings, dependent: :destroy
 
   after_save :external
 
