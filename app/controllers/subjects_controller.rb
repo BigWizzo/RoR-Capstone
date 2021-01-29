@@ -14,6 +14,11 @@ class SubjectsController < ApplicationController
     # @external = current_student.subjects.external
   # end
 
+  # def show
+    # @subject = Subject.find()
+  # end
+  
+
   def new
     @subject = current_student.subjects.new
   end

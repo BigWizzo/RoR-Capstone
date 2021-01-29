@@ -23,6 +23,7 @@
                 <p class="card-text mb-2">
                   <small class="text-muted">
                     Created: <%= clocking.created_at.strftime("#{clocking.created_at.day.ordinalize} %B %Y") %>
+                    <%= clocking.student.username %>
                   </small>
                 </p>
                 <p class="card-detail mb-2"><%= clocking.details %></p>
