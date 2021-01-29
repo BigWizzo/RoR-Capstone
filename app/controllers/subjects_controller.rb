@@ -15,7 +15,7 @@ class SubjectsController < ApplicationController
   # end
 
   # def show
-    # @subject = Subject.find()
+    # @subject = @subject.clockings.find(:id)
   # end
   
 
