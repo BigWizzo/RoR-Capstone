@@ -37,11 +37,11 @@ gem 'mini_magick', '~> 4.8'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap'
 gem 'devise'
+gem 'faker'
 gem 'font-awesome-sass'
 gem 'hirb'
 gem 'image_processing'
 gem 'jquery-rails'
-gem 'faker'
 
 group :development, :test do
   gem 'rspec-rails'
