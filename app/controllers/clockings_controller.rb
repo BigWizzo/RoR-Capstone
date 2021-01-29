@@ -3,6 +3,10 @@ class ClockingsController < ApplicationController
   before_action :for_subject
   before_action :set_clocking, only: %i[show edit update destroy]
 
+  def all
+    @all = current_student.clockings.internal
+  end
+
   def new
     @clocking = @subject.clockings.build
   end

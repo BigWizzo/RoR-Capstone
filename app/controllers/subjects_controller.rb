@@ -6,10 +6,6 @@ class SubjectsController < ApplicationController
     @subjects = Subject.all
   end
 
-  def all
-    @all = current_student.subjects.internal
-  end
-
   def select
     @subjects = current_student.subjects
   end
