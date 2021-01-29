@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
-  resources :subjects do
-  resources :clockings, except: [:index, :show]
-  end
+  resources :subjects
+  resources :clockings
+
   devise_for :students, :controllers => { registrations: 'registrations'}
   root to: "subjects#home"
   get 'home', to: 'subjects#home'

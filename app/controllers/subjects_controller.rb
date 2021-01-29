@@ -6,13 +6,13 @@ class SubjectsController < ApplicationController
     @subjects = Subject.all
   end
 
-  def select
-    @subjects = current_student.subjects
-  end
-
-  def external
-    @external = current_student.subjects.external
-  end
+  # def select
+    # @subjects = current_student.subjects
+  # end
+# 
+  # def external
+    # @external = current_student.subjects.external
+  # end
 
   def new
     @subject = current_student.subjects.new
