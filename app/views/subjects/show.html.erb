@@ -8,7 +8,7 @@
     
     <div class="col-md-9">
       <div class="new-clock text-center py-3">
-        <%= link_to 'Create new Clocking', new_subject_clocking_path(@subject), class: 'font-18' %>  for
+        <%= link_to 'Create new Clocking', new_clocking_path(@subject), class: 'font-18' %>  for
         <%= @subject.title%>
       </div>
       <% for clocking in @subject.clockings %>
@@ -32,10 +32,10 @@
               <h5 class="row justify-content-center m-3 font-16"><%= clocking.duration %> Hours</h5>
               <div class="text-center">
                 <span>
-                  <%= link_to 'Edit', edit_subject_clocking_path(@subject, clocking) %> | 
+                  <%= link_to 'Edit', edit_clocking_path(clocking) %> | 
                 </span>
                 <span>
-                  <%= link_to 'Destroy', [@subject, clocking], method: :delete, data: { confirm: 'Are you sure?' } %>
+                  <%= link_to 'Destroy', [clocking], method: :delete, data: { confirm: 'Are you sure?' } %>
                 </span>
               </div>
             </div>
@@ -44,7 +44,7 @@
       <%end%>
       <div>
         <%= link_to 'Edit', edit_subject_path(@subject) %> |
-        <%= link_to 'New Clocking', new_subject_clocking_path(@subject) %> |
+        <%= link_to 'New Clocking', new_clocking_path(@subject) %> |
         <%= link_to 'Back to All Subjects', subjects_path %>
       </div>
     </div>

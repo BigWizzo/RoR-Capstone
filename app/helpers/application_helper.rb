@@ -1,11 +1,11 @@
 module ApplicationHelper
-  def count_subject_clock
+  def count_clock
     count = 0
-    @all.each do |subject|
-      subject.clockings.each do |clocking|
-        count += clocking.duration if subject.title != 'External'
+    # @all.each do |subject|
+      @clockings.each do |clocking|
+        count += clocking.duration
       end
-    end
+    # end
     count
   end
 

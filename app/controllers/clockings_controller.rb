@@ -4,7 +4,7 @@ class ClockingsController < ApplicationController
   before_action :set_clocking, only: %i[show edit update destroy]
 
   def index
-    @clockings = current_student.clockings.internal
+    @clockings = current_student.clockings
   end
 
   def external

@@ -1,25 +1,36 @@
-<%# <% @all.each do |subject| %> %>
-  <% @clockings.each do |clocking| %>
-    <div class="card gutter my-4 border-0">
-     <div class="row p-2">
-       <div class="col-3 card-wrap">
-         <%# <%= check_external(subject) %> %>
-       </div>
-       <div class="col-6">
-         <div class="card-body py-1">
-           <h5 class="card-title m-0"><%= clocking.topic %></h5>
-           <p class="card-text mb-2">
-             <small class="text-muted">
-               Created: <%= clocking.created_at.strftime("#{clocking.created_at.day.ordinalize} %B %Y") %>
-             </small>
-           </p>
-           <p class="card-detail mb-2"><%= clocking.details %></p>
+<% content_for :h1, "ALL CLOCKINGS" %>
+<% content_for :study_mate, "ALL CLOCKINGS" %>
+<% content_for :h4, "Subject and Non Based Clockings" %>
+<% content_for :count, "#{count_clock} Hours" %>
+<%= render 'subjects/top' %>
+<div class="container-fluid">
+  <div class="row content">
+  <%= render 'subjects/nav' %>
+    <div class="col-md-9 content-wrap">
+      <% @clockings.each do |clocking| %>
+        <div class="card gutter my-4 border-0">
+         <div class="row p-2">
+           <div class="col-3 card-wrap">
+             <%# <%= check_external(subject) %> %>
+           </div>
+           <div class="col-6">
+             <div class="card-body py-1">
+               <h5 class="card-title m-0"><%= clocking.topic %></h5>
+               <p class="card-text mb-2">
+                 <small class="text-muted">
+                   Created: <%= clocking.created_at.strftime("#{clocking.created_at.day.ordinalize} %B %Y") %>
+                 </small>
+               </p>
+               <p class="card-detail mb-2"><%= clocking.details %></p>
+             </div>
+           </div>
+           <div class="col-3">
+             <h5 class="row justify-content-center m-3 font-16"><%= clocking.duration %> Hours</h5>
+           </div>
          </div>
        </div>
-       <div class="col-3">
-         <h5 class="row justify-content-center m-3 font-16"><%= clocking.duration %> Hours</h5>
-       </div>
-     </div>
-   </div>
-  <% end %>
-<%# <%end%> %>
+      <% end %>
+    </div>
+  </div>
+</div>
+<%= render "subjects/footer"%>
