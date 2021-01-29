@@ -41,6 +41,7 @@ gem 'font-awesome-sass'
 gem 'hirb'
 gem 'image_processing'
 gem 'jquery-rails'
+gem 'faker'
 
 group :development, :test do
   gem 'rspec-rails'
