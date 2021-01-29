@@ -4,11 +4,11 @@ class ClockingsController < ApplicationController
   before_action :set_clocking, only: %i[show edit update destroy]
 
   def index
-    @clockings = current_student.clockings.where("subject_id is not null")
+    @clockings = current_student.clockings.internal
   end
 
   def external
-    @clockings = current_student.clockings.where("subject_id is null")
+    @clockings = current_student.clockings.external
   end
 
   def new

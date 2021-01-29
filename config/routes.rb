@@ -7,5 +7,5 @@ Rails.application.routes.draw do
   get 'home', to: 'subjects#home'
   get 'all', to: 'subjects#all'
   get 'select', to: 'subjects#select'
-  get 'external', to: 'subjects#external'
+  get 'external', to: 'clockings#external'
 end
