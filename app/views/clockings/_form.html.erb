@@ -27,6 +27,12 @@
     <%= form.number_field :duration, class: "form-control", min: 0, max: 24 %>
   </div>
 
+  <div class="form-group field">
+    <%= form.label :subject %>
+    <%= form.collection_select :subject_id, current_student.subjects, :id, :title, :prompt => true %>
+    <small id="iconupload" class="form-text text-muted">Optional</small>
+  </div>
+
   <div class="form-group actions">
     <%= form.submit "Create Clocking", class: "btn btn-primary btn-lg btn-block" %>
   </div>

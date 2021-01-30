@@ -59,6 +59,6 @@ class ClockingsController < ApplicationController
   end
 
   def clocking_params
-    params.require(:clocking).permit(:topic, :details, :duration, :internal_id, :external_id)
+    params.require(:clocking).permit(:topic, :details, :duration, :subject_id)
   end
 end
