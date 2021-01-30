@@ -6,6 +6,6 @@ class Clocking < ApplicationRecord
   validates :details, presence: true, length: { minimum: 1, maximum: 30 }
   validates :duration, presence: true
 
-  # scope :internal, -> { where('subject_id is not null') }
+  scope :internal, -> { where('subject_id is not null') }
   scope :external, -> { where('subject_id is null') }
 end

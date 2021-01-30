@@ -42,6 +42,7 @@ gem 'font-awesome-sass'
 gem 'hirb'
 gem 'image_processing'
 gem 'jquery-rails'
+gem 'active_storage_validations'
 
 group :development, :test do
   gem 'rspec-rails'

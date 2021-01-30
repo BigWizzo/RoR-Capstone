@@ -3,7 +3,7 @@ class SubjectsController < ApplicationController
   before_action :set_subject, only: %i[show edit update destroy]
 
   def index
-    @subjects = Subject.all.includes(:icon_attachment)
+    @subjects = Subject.all.includes(icon_attachment: :blob).order(created_at: :DESC)
   end
 
   def new
