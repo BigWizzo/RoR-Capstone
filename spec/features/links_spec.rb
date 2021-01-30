@@ -41,7 +41,7 @@ RSpec.describe 'Test navigation links' do
   it 'Send student to the All Subjects page' do
     visit root_path
     first('.new-clock').click
-    expect(current_path).to eql(select_path)
+    expect(current_path).to eql(new_clocking_path)
     expect(page).to have_text('SELECT SUBJECT')
   end
 end

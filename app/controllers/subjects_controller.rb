@@ -6,19 +6,6 @@ class SubjectsController < ApplicationController
     @subjects = Subject.all.includes(:icon_attachment)
   end
 
-  # def select
-    # @subjects = current_student.subjects
-  # end
-# 
-  # def external
-    # @external = current_student.subjects.external
-  # end
-
-  # def show
-    # @subject = @subject.clockings.find(:id)
-  # end
-  
-
   def new
     @subject = current_student.subjects.new
   end
@@ -47,6 +34,10 @@ class SubjectsController < ApplicationController
         format.html { render :edit }
       end
     end
+  end
+
+  def show
+    @clockings = @subject.clockings
   end
 
   def destroy

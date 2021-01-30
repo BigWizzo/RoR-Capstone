@@ -1,6 +1,5 @@
 class ClockingsController < ApplicationController
   before_action :authenticate_student!
-  # before_action :for_subject
   before_action :set_clocking, only: %i[show edit update destroy]
 
   def index
@@ -24,7 +23,7 @@ class ClockingsController < ApplicationController
 
     respond_to do |format|
       if @clocking.save
-        format.html { redirect_to @clocking, notice: 'Clocking was successfully created.' }
+        format.html { redirect_to clockings_path, notice: 'Clocking was successfully created.' }
       else
         format.html { render :new }
       end
@@ -34,7 +33,7 @@ class ClockingsController < ApplicationController
   def update
     respond_to do |format|
       if @clocking.update(clocking_params)
-        format.html { redirect_to @clocking, notice: 'Clocking was successfully updated.' }
+        format.html { redirect_to clockings_path, notice: 'Clocking was successfully updated.' }
       else
         format.html { render :edit }
       end
@@ -44,15 +43,11 @@ class ClockingsController < ApplicationController
   def destroy
     @clocking.destroy
     respond_to do |format|
-      format.html { redirect_to clockings_path(@clocking), notice: 'Clocking was successfully destroyed.' }
+      format.html { redirect_to clockings_path, notice: 'Clocking was successfully destroyed.' }
     end
   end
 
   private
-
-  # def for_subject
-    # @subject = Subject.find(params[:subject_id])
-  # end
 
   def set_clocking
     @clocking = current_student.clockings.find(params[:id])

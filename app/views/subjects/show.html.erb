@@ -8,10 +8,9 @@
     
     <div class="col-md-9">
       <div class="new-clock text-center py-3">
-        <%= link_to 'Create new Clocking', new_clocking_path(@subject), class: 'font-18' %>  for
-        <%= @subject.title%>
+        <%= link_to 'Create new Clocking', new_clocking_path(@subject), class: 'font-18' %>
       </div>
-      <% for clocking in @subject.clockings %>
+      <% for clocking in @clockings %>
         <div class="card mb-3">
           <div class="row no-gutters">
             <div class="col-3 card-wrap">
@@ -22,8 +21,8 @@
                 <h5 class="card-title m-0"><%= clocking.topic %></h5>
                 <p class="card-text mb-2">
                   <small class="text-muted">
-                    Created: <%= clocking.created_at.strftime("#{clocking.created_at.day.ordinalize} %B %Y") %>
-                    <%= clocking.student.username %>
+                    Created <%= clocking.created_at.strftime("#{clocking.created_at.day.ordinalize} %B %Y") %>
+                    <strong> By <%= clocking.student.username %></strong>
                   </small>
                 </p>
                 <p class="card-detail mb-2"><%= clocking.details %></p>
