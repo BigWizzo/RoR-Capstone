@@ -1,5 +1,9 @@
 <ul class="list-group list-group-flush blue-bg lt-gray-clr">
   <li class="list-group-item blue-bg border-btm py-3">
+    <i class="fas fa-user-graduate px-2" aria-hidden="true"></i>
+    <%= link_to "#{current_student.username}", root_path, class: 'home-link lt-gray-clr home' %>
+  </li>
+  <li class="list-group-item blue-bg border-btm py-3">
     <i class="fas fa-home px-2" aria-hidden="true"></i>
     <%= link_to 'Home', root_path, class: 'home-link lt-gray-clr home' %>
   </li>
@@ -24,7 +28,7 @@
     <%= link_to 'New Clocking', new_clocking_path, class: 'home-link lt-gray-clr new-clock' %>
   </li>
   <li class="list-group-item blue-bg border-btm py-3">
-    <i class="fas fa-user-clock px-2" aria-hidden="true"></i>
+    <i class="fas fa-sign-out-alt px-2" aria-hidden="true"></i>
     <%= link_to('Logout', destroy_student_session_path, method: :delete, class: "home-link lt-gray-clr logout") %>
  </li>
 </ul>
