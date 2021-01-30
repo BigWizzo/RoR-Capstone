@@ -8,12 +8,11 @@ class Subject < ApplicationRecord
   # validate :icon_type
 
   # def icon_type
-    # return unless icon.attached? && !icon.content_type.in?(%w[image/jpeg image/png image/jpg])
-# 
-    # errors.add(:icon, 'Must be a JPEG or PNG')
+  # return unless icon.attached? && !icon.content_type.in?(%w[image/jpeg image/png image/jpg])
+  #
+  # errors.add(:icon, 'Must be a JPEG or PNG')
   # end
 
   validates :icon, attached: true,
-                    content_type: ['image/png', 'image/jpg', 'image/jpeg']
-
+                   content_type: ['image/png', 'image/jpg', 'image/jpeg']
 end

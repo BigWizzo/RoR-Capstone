@@ -34,6 +34,7 @@ gem 'mini_magick', '~> 4.8'
 # gem 'capistrano-rails', group: :development
 
 # Reduces boot times through caching; required in config/boot.rb
+gem 'active_storage_validations'
 gem 'bootsnap', '>= 1.1.0', require: false
 gem 'bootstrap'
 gem 'devise'
@@ -42,7 +43,6 @@ gem 'font-awesome-sass'
 gem 'hirb'
 gem 'image_processing'
 gem 'jquery-rails'
-gem 'active_storage_validations'
 
 group :development, :test do
   gem 'rspec-rails'
