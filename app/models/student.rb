@@ -5,7 +5,7 @@ class Student < ApplicationRecord
          :recoverable, :rememberable, :validatable, authentication_keys: [:username]
 
   validates :email, presence: true, uniqueness: true
-  validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 25 }
+  validates :username, presence: true, uniqueness: true, length: { minimum: 1, maximum: 30 }
 
   has_many :subjects, dependent: :destroy
   has_many :clockings, dependent: :destroy

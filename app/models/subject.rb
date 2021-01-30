@@ -3,7 +3,7 @@ class Subject < ApplicationRecord
   has_many :clockings, dependent: :destroy
   has_one_attached :icon
 
-  validates :title, presence: true, length: { minimum: 3, maximum: 20 }
+  validates :title, presence: true, length: { minimum: 1, maximum: 40 }
   validates :description, presence: true
   validate :icon_type
 
