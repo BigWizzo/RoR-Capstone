@@ -6,4 +6,10 @@ module ApplicationHelper
     end
     count
   end
+
+  def user_name
+    if student_signed_in?
+      current_student.username
+    end
+  end
 end
