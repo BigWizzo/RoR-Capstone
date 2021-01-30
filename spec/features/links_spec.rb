@@ -13,21 +13,36 @@ RSpec.describe 'Test navigation links' do
   it 'Send student to the All Clockings page' do
     visit root_path
     first('.all').click
-    expect(current_path).to eql(all_path)
-    expect(page).to have_text('SUBJECT CLOCKINGS')
+    expect(current_path).to eql(clockings_path)
+  end
+
+  it 'Send student to the All Clockings page' do
+    visit root_path
+    first('.all').click
+    expect(page).to have_text('ALL CLOCKINGS')
+  end
+
+  it 'Send student to the External Clockings page' do
+    visit root_path
+    first('.external').click
+    expect(page).to have_text('EXTERNAL CLOCKINGS')
   end
 
   it 'Send student to the External Clockings page' do
     visit root_path
     first('.external').click
     expect(current_path).to eql(external_path)
-    expect(page).to have_text('EXTERNAL CLOCKINGS')
   end
 
   it 'Send student to the All Subjects page' do
     visit root_path
     first('.subjects').click
     expect(current_path).to eql(subjects_path)
+  end
+
+  it 'Send student to the All Subjects page' do
+    visit root_path
+    first('.subjects').click
     expect(page).to have_text('ALL SUBJECTS')
   end
 
@@ -35,6 +50,11 @@ RSpec.describe 'Test navigation links' do
     visit root_path
     first('.new-sub').click
     expect(current_path).to eql(new_subject_path)
+  end
+
+  it 'Send student to the New Subject form page' do
+    visit root_path
+    first('.new-sub').click
     expect(page).to have_text('New Subject')
   end
 
@@ -42,6 +62,11 @@ RSpec.describe 'Test navigation links' do
     visit root_path
     first('.new-clock').click
     expect(current_path).to eql(new_clocking_path)
-    expect(page).to have_text('SELECT SUBJECT')
+  end
+
+  it 'Send student to the All Subjects page' do
+    visit root_path
+    first('.new-clock').click
+    expect(page).to have_text('New Clocking')
   end
 end

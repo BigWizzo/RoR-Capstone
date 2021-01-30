@@ -8,13 +8,12 @@ RSpec.describe 'Student Sign up/in' do
     fill_in 'student[password]', with: 'mypassword'
     fill_in 'student[password_confirmation]', with: 'mypassword'
     click_on 'commit'
-    expect(current_path).to eql(root_path)
     expect(page).to have_text('Welcome! You have signed up successfully.')
   end
 
   it 'Fails to Sign up a student if name is not given' do
     visit 'students/sign_up'
-    fill_in 'student[username]', with: 'ab'
+    fill_in 'student[username]', with: ''
     fill_in 'student[email]', with: 'myname@email.com'
     fill_in 'student[password]', with: 'mypassword'
     fill_in 'student[password_confirmation]', with: 'mypassword'
@@ -39,7 +38,6 @@ RSpec.describe 'Student Sign up/in' do
     fill_in 'student[username]', with: 'myname'
     fill_in 'student[password]', with: 'mypassword'
     click_on 'commit'
-    expect(current_path).to eql(root_path)
     expect(page).to have_text('Signed in successfully.')
   end
 
