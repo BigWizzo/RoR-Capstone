@@ -8,8 +8,6 @@ module ApplicationHelper
   end
 
   def user_name
-    if student_signed_in?
-      current_student.username
-    end
+    current_student.username if student_signed_in?
   end
 end
