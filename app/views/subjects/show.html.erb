@@ -31,11 +31,11 @@
             <div class="col-3">
               <h5 class="row justify-content-center m-3 font-16"><%= clocking.duration %> Hours</h5>
               <div class="text-center">
-                <span>
-                  <%= link_to 'Edit', edit_clocking_path(clocking) %> | 
+                <span class= "task">
+                  <%= link_to 'Edit', edit_clocking_path(clocking), class: "text-info" %> | 
                 </span>
-                <span>
-                  <%= link_to 'Destroy', [clocking], method: :delete, data: { confirm: 'Are you sure?' } %>
+                <span class= "task">
+                  <%= link_to 'Destroy', [clocking], class: "text-danger", method: :delete, data: { confirm: 'Are you sure?' } %>
                 </span>
               </div>
             </div>
@@ -43,7 +43,7 @@
         </div>
       <%end%>
       <div>
-        <%= link_to 'Edit', edit_subject_path(@subject) %> |
+        <%= link_to 'Edit', edit_subject_path(@subject), class: "text-info" %> |
         <%= link_to 'New Clocking', new_clocking_path(@subject) %> |
         <%= link_to 'Back to All Subjects', subjects_path %>
       </div>
