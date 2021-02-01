@@ -27,7 +27,7 @@
 
 ## Live Demo
 
-Open [Live Version Link](https://secure-garden-76181.herokuapp.com)
+Open [Live Version Link](https://whispering-ocean-64491.herokuapp.com)
 
 ### Prerequisites
 
