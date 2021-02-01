@@ -69,8 +69,14 @@
 }
 
 .form-control {
-  border-left: 0;
-  border-right: 0;
+  border-left: 0px;
+  border-right: 0px;
+  border-radius: 0px;
+  border-top: 0px;
+}
+
+.outer {
+  width: 50%;
 }
 
 /* fonts here */
@@ -137,9 +143,12 @@
 }
 
 .d-form {
-  width: 25%;
+  width: 75%;
 }
 
+// .form-control:focus {
+// border: none;
+// }
 .side-menu {
   position: relative;
   z-index: 1;
@@ -151,6 +160,10 @@
   bottom: 0;
   color: white;
   z-index: 2;
+}
+
+.card-title {
+  height: 50%;
 }
 
 @media screen and (max-width: 992px) {
@@ -168,7 +181,6 @@
 
   .card-text {
     font-size: 11px;
-    // margin-bottom: 0px;
   }
 
   .card-detail {
@@ -178,12 +190,24 @@
   .task {
     font-size: 12px;
   }
+
+  .outer {
+    width: 75%;
+  }
 }
 
 /* On 767px screens and below */
 @media screen and (max-width: 767px) {
   .d-form {
     width: 75%;
+  }
+
+  .outer {
+    width: 100%;
+  }
+
+  .card-title {
+    height: auto;
   }
 }
 

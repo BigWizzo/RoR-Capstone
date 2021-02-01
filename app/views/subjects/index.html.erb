@@ -1,34 +1,30 @@
-<% content_for :h1, "ALL SUBJECTS" %>
 <% content_for :study_mate, "ALL SUBJECTS" %>
 
 <div class="container-fluid">
   <div class="row content">
   <%= render 'subjects/nav' %>
-    <div class="col-md-9 content-wrap">
+    <div class="col-12 content-wrap">
       <div class="chunk container-fluid pt-3">
         <div class="row">
           <div class="clock-type col-10">
-            <h4 class="text-center font-weight-lighter text-secondary">Subject List</h4>
+            <h4 class="font-weight-lighter text-secondary">Subject List</h4>
           </div>
         </div>
       </div>
       <% @subjects.each do |subject| %>          
           <div class="card mb-3">
-            <div class="row no-gutters">
+            <div class="row p-2">
               <div class="col-3 card-wrap">
                 <%= link_to sub_icon(subject), subject_path(subject) %>
               </div>
-              <div class="col-7">
-                  <div class="card-body py-1">
-                    <h5 class="card-title m-0"><%= subject.title %></h5>
-                    <p class="card-text mb-2">
-                      <small class="text-muted">
-                        Created: <%= subject.created_at.strftime("#{subject.created_at.day.ordinalize} %B %Y") %>
-                      </small>
-                    </p>
-                    <p class="card-detail mb-2"><%= subject.description %></p>
-                  </div>
-              </div>
+                <div class="col-7 card-body py-1">
+                  <h5 class="card-title mt-md-3 text-secondary"><%= subject.title %></h5>
+                  <p class="card-text pb-3">
+                    <small class="text-muted">
+                      <%= subject.created_at.strftime("#{subject.created_at.day.ordinalize} %B %Y") %>
+                    </small>
+                  </p>
+                </div>
               <div class="col-2 task d-flex flex-column align-items-center justify-content-center">
                 <div class ="">
                   <p class="task-p mb-2"><%= link_to 'Show', subject %></p>

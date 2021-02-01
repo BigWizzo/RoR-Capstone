@@ -37,7 +37,7 @@ class SubjectsController < ApplicationController
   end
 
   def show
-    @clockings = @subject.clockings
+    @clockings = @subject.clockings.includes(:student)
   end
 
   def destroy

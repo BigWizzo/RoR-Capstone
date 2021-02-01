@@ -6,20 +6,19 @@
 
   <%= render 'subjects/nav' %>
     
-    <div class="col-md-9">
+    <div class="col-12">
       <div class="new-clock text-center py-3">
         <%= link_to 'Create new Clocking', new_clocking_path(@subject), class: 'font-18' %>
       </div>
       <% for clocking in @clockings %>
         <div class="card mb-3">
-          <div class="row no-gutters">
+          <div class="row p-2">
             <div class="col-3 card-wrap">
               <%= clock_icon(clocking)%>
             </div>
-            <div class="col-6">
-              <div class="card-body py-1">
-                <h5 class="card-title m-0"><%= clocking.topic %></h5>
-                <p class="card-text mb-2">
+              <div class="col-6 card-body py-1">
+                <h5 class="mt-md-3 text-secondary"><%= clocking.topic %></h5>
+                <p class="card-title card-text mb-2">
                   <small class="text-muted">
                     Created <%= clocking.created_at.strftime("#{clocking.created_at.day.ordinalize} %B %Y") %>
                     <strong> By <%= clocking.student.username %></strong>
@@ -27,7 +26,6 @@
                 </p>
                 <p class="card-detail mb-2"><%= clocking.details %></p>
               </div>
-            </div>
             <div class="col-3">
               <h5 class="row justify-content-center m-3 font-16"><%= clocking.duration %> Hours</h5>
               <div class="text-center">
