@@ -1,6 +1,6 @@
 Rails.application.routes.draw do
   resources :subjects
-  resources :clockings, except: [:show]
+  resources :clockings
 
   devise_for :students, :controllers => { registrations: 'registrations'}
   root to: "subjects#home"
