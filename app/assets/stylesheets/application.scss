@@ -71,6 +71,12 @@
 .form-control {
   border-left: 0;
   border-right: 0;
+  border-radius: 0;
+  border-top: 0;
+}
+
+.outer {
+  width: 50%;
 }
 
 /* fonts here */
@@ -123,21 +129,25 @@
 }
 
 .gutter {
-  box-shadow: silver 0px 1px 3px 0px;
+  box-shadow: silver 0 1px 3px 0;
 }
 
 .chunk {
-  box-shadow: silver 0px 5px 10px 0px;
+  box-shadow: silver 0 5px 10px 0;
 }
 
-/* Set gray background color and 100% height */
 .sidenav {
   background-color: #f1f1f1;
   height: 100%;
 }
 
 .d-form {
-  width: 25%;
+  width: 75%;
+}
+
+.side-menu {
+  position: relative;
+  z-index: 1;
 }
 
 .footer {
@@ -145,6 +155,11 @@
   left: 0;
   bottom: 0;
   color: white;
+  z-index: 2;
+}
+
+.card-title {
+  height: 50%;
 }
 
 @media screen and (max-width: 992px) {
@@ -162,7 +177,6 @@
 
   .card-text {
     font-size: 11px;
-    // margin-bottom: 0px;
   }
 
   .card-detail {
@@ -172,12 +186,24 @@
   .task {
     font-size: 12px;
   }
+
+  .outer {
+    width: 75%;
+  }
 }
 
 /* On 767px screens and below */
 @media screen and (max-width: 767px) {
   .d-form {
     width: 75%;
+  }
+
+  .outer {
+    width: 100%;
+  }
+
+  .card-title {
+    height: auto;
   }
 }
 

@@ -3,22 +3,8 @@ class SubjectsController < ApplicationController
   before_action :set_subject, only: %i[show edit update destroy]
 
   def index
-    @subjects = current_student.subjects
+    @subjects = Subject.all.includes(icon_attachment: :blob).order(created_at: :DESC)
   end
-
-  def all
-    @subjects = current_student.subjects
-  end
-
-  def select
-    @subjects = current_student.subjects
-  end
-
-  def external
-    @subjects = current_student.subjects
-  end
-
-  def show; end
 
   def new
     @subject = current_student.subjects.new
@@ -48,6 +34,10 @@ class SubjectsController < ApplicationController
         format.html { render :edit }
       end
     end
+  end
+
+  def show
+    @clockings = @subject.clockings.includes(:student)
   end
 
   def destroy

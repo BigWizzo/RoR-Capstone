@@ -1,26 +1,34 @@
-<ul class="list-group list-group-flush text-md-center blue-bg lt-gray-clr">
+<ul class="list-group list-group-flush blue-bg lt-gray-clr">
+  <li class="list-group-item blue-bg border-btm py-3">
+    <i class="fas fa-user-graduate px-2" aria-hidden="true"></i>
+    <%= link_to "#{user_name}", root_path, class: 'home-link lt-gray-clr home' %>
+  </li>
+  <li class="list-group-item blue-bg border-btm py-3">
+    <i class="fas fa-home px-2" aria-hidden="true"></i>
+    <%= link_to 'Home', root_path, class: 'home-link lt-gray-clr home' %>
+  </li>
   <li class="list-group-item blue-bg border-btm py-3">
     <i class="fas fa-clock px-2" aria-hidden="true"></i>
-    <%= link_to 'All Clockings', all_path, class: 'home-link lt-gray-clr' %>
+    <%= link_to 'All Clockings', clockings_path, class: 'home-link lt-gray-clr all' %>
   </li>
   <li class="list-group-item blue-bg border-btm py-3">
     <i class="fas fa-glass-cheers px-2" aria-hidden="true"></i>
-    <%= link_to 'External Clockings', external_path, class: 'home-link lt-gray-clr' %>
+    <%= link_to 'External Clockings', external_path, class: 'home-link lt-gray-clr external' %>
   </li>
   <li class="list-group-item blue-bg border-btm py-3">
     <i class="fas fa-book px-2" aria-hidden="true"></i>
-    <%= link_to 'All Subjects', subjects_path, class: 'home-link lt-gray-clr' %>
+    <%= link_to 'All Subjects', subjects_path, class: 'home-link lt-gray-clr subjects' %>
   </li>
   <li class="list-group-item blue-bg border-btm py-3">
     <i class="fas fa-book-open px-2" aria-hidden="true"></i>
-    <%= link_to 'New Subject', new_subject_path, class: 'home-link lt-gray-clr' %>
+    <%= link_to 'New Subject', new_subject_path, class: 'home-link lt-gray-clr new-sub' %>
   </li>
   <li class="list-group-item blue-bg border-btm py-3">
     <i class="fas fa-user-clock px-2" aria-hidden="true"></i>
-    <%= link_to 'New Clocking', select_path, class: 'home-link lt-gray-clr' %>
+    <%= link_to 'New Clocking', new_clocking_path, class: 'home-link lt-gray-clr new-clock' %>
   </li>
   <li class="list-group-item blue-bg border-btm py-3">
-    <i class="fas fa-user-clock px-2" aria-hidden="true"></i>
-    <%= link_to('Logout', destroy_student_session_path, method: :delete, class: "home-link lt-gray-clr") %>
+    <i class="fas fa-sign-out-alt px-2" aria-hidden="true"></i>
+    <%= link_to('Logout', destroy_student_session_path, method: :delete, class: "home-link lt-gray-clr logout") %>
  </li>
 </ul>

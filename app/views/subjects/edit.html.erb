@@ -1,4 +1,5 @@
-<h1 class="text-center">Editing <%=@subject.title%></h1>
+<% content_for :study_mate, "Editing #{@subject.title}" %>
+
 
 <%= render 'form', subject: @subject %>
 

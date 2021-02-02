@@ -10,14 +10,6 @@ RSpec.describe 'Subject' do
     click_on 'commit'
   end
 
-  it 'Create a subject for the signed in student' do
-    visit new_subject_path
-    fill_in 'subject[title]', with: 'Subject title'
-    fill_in 'subject[description]', with: 'Subject description'
-    click_on 'commit'
-    expect(page).to have_text('Subject was successfully created.')
-  end
-
   it 'Fail to create subject if title is blank' do
     visit new_subject_path
     fill_in 'subject[title]', with: ''

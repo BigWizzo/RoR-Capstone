@@ -1,34 +1,39 @@
-<div class="d-form m-auto">
-<%= form_with(model: [@subject, clocking], local: true) do |form| %>
-  <% if clocking.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(clocking.errors.count, "error") %> prohibited this clocking from being saved:</h2>
-
-      <ul>
-      <% clocking.errors.full_messages.each do |message| %>
-        <li><%= message %></li>
+<div class="m-auto py-5 bg-white">
+  <div class="d-form m-auto">
+    <%= form_with(model: [@subject, clocking], local: true) do |form| %>
+      <% if clocking.errors.any? %>
+        <div id="error_explanation">
+          <h2><%= pluralize(clocking.errors.count, "error") %> prohibited this clocking from being saved:</h2>
+    
+          <ul>
+          <% clocking.errors.full_messages.each do |message| %>
+            <li><%= message %></li>
+          <% end %>
+          </ul>
+        </div>
       <% end %>
-      </ul>
-    </div>
-  <% end %>
-
-  <div class="form-group field">
-    <%= form.label :topic %>
-    <%= form.text_field :topic, class: "form-control",  autofocus: true %>
-  </div>
-
-  <div class="form-group field">
-    <%= form.label :details %>
-    <%= form.text_field :details, class: "form-control" %>
-  </div>
-
-  <div class="form-group field">
-    <%= form.label :duration %>
-    <%= form.number_field :duration, class: "form-control", min: 0, max: 24 %>
-  </div>
-
-  <div class="form-group actions">
-    <%= form.submit "Create Clocking", class: "btn btn-primary btn-lg btn-block" %>
-  </div>
-<% end %>
-
+    
+      <div class="form-group field">
+        <%= form.text_field :topic, class: "form-control", placeholder: "Topic" %>
+      </div>
+    
+      <div class="form-group field">
+        <%= form.text_field :details, class: "form-control", placeholder: "Details" %>
+      </div>
+    
+      <div class="form-group field">
+        <%= form.number_field :duration, class: "form-control", placeholder: "Duration", min: 0, max: 24 %>
+      </div>
+    
+      <div class="form-group field">
+        <%= form.label :subject %>
+        <%= form.collection_select :subject_id, current_student.subjects, :id, :title, :prompt => true %>
+        <small id="iconupload" class="form-text text-muted">Optional</small>
+      </div>
+    
+      <div class="form-group actions">
+        <%= form.submit "Create Clocking", class: "btn btn-primary btn-lg btn-block" %>
+      </div>
+    <% end %>
+  
+  

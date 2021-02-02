@@ -5,16 +5,8 @@ class Student < ApplicationRecord
          :recoverable, :rememberable, :validatable, authentication_keys: [:username]
 
   validates :email, presence: true, uniqueness: true
-  validates :username, presence: true, uniqueness: true, length: { minimum: 3, maximum: 25 }
+  validates :username, presence: true, uniqueness: true, length: { minimum: 1, maximum: 30 }
 
-  has_many :subjects
-  has_many :clockings
-
-  after_save :external
-
-  def external
-    return unless Subject.where(student_id: id, title: 'External').empty?
-
-    Subject.create(student_id: id, title: 'External', description: 'For all your non Subject Clockings')
-  end
+  has_many :subjects, dependent: :destroy
+  has_many :clockings, dependent: :destroy
 end
