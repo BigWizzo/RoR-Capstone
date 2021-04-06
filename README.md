@@ -1,7 +1,7 @@
 # Ruby on Rails Group our transactions app
 
-> This application help students clock in their studies based on their subjects. They can track the number of hours they spend studying on a specific subject.
-> The app allows students to clock in their non academic activities as well.
+> This application helps students clock in their studies based on their subjects. They can track the number of hours they spend studying a specific subject.
+> The app allows students to clock in their non-academic activities as well.
 > Students can create many subjects as well as many clockings.
 > They can create many clockings per subject.
 
